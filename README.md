@@ -1,5 +1,5 @@
 # Cinematic App
-A simplified torent app to browse and search tv shows.
+A simplified torrent app to browse and search tv shows. Allows you to download eztv uploaded torrents .
 
 #Search
   Allows you to search tv shows by keyword
