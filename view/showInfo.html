@@ -1,0 +1,46 @@
+<div class="container" ng-hide="isLoading">
+        <div class="row">
+                <div class="container-fluid">
+                        <div class="row">
+                                <div class="col-xs-2">
+                                        <img ng-src="{{showDataMore.images.poster}}" height="200" width="140" />
+                                        <hr>
+                                        <div class="row text-center"><b>Year:</b> {{showDataMore.year}} </div>
+                                        <hr>
+                                        <div class="row text-center">Rating: <b class="sub-title">{{showDataMore.rating.percentage | number:2}}%</b></div>
+                                </div>
+                                <div class="col-xs-10">
+                                        <h2 class="title"> {{showDataMore.title}} </h2>
+                                        <span class="row">
+                                        {{showDataMore.synopsis}}
+                                        </span>
+                                        <span class="row">
+                                                <span class="sub-title">Genre:</span>
+                                        <span class="">
+                                                <i ng-repeat="genre in showDataMore.genres">
+                                                 {{genre}}<span ng-show="!$last">, </span>
+                                        </i>
+                                        </span>
+                                        </span>
+                                        <span class="row">
+                                                <span class="sub-title">Number of seasons: </span>
+                                        <b>{{showDataMore.num_seasons}}</b> <i> ({{showDataMore.status}})</i>
+                                        </span>
+                                        </span>
+                                        <!-- shows list -->
+
+                                        <div ng-repeat="seasons in showDataMore.episodes | orderBy:'-season'">
+                                                <span class="seasonbr sub-title" ng-show="seasons.episode == 1"> Seasons {{seasons.season}} :
+                                                </span>
+                                               
+                                                <div class="episode">
+                                                        <div class="glyphicon glyphicon-magnet tr-grn"></div> Episode {{seasons.episode}} : <i> {{seasons.title}}</i>
+                                                </div>
+                                        </div>
+                                        <hr>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+</div>
