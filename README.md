@@ -1,4 +1,4 @@
-# cinematic
+# Cinematic App
 
 #Search
   Allows you to search tv shows by keyword
@@ -8,4 +8,9 @@
 
 #Show details 
 Fetches all data along with torrent magnet  link
+
+#Technologies 
+  Angular.js
+  html 5
+  Bootstrap
 
