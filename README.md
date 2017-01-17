@@ -10,7 +10,7 @@
 Fetches all data along with torrent magnet  link
 
 #Technologies 
-  Angular.js
-  html 5
+  Angular.js,
+  html 5,
   Bootstrap
 
