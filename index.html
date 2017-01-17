@@ -15,24 +15,31 @@
   <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
       <div class="row">
-        <div class="col-xs-2">
+        <div class="">
           <div class="navbar-header"> <a class="navbar-brand" href="#" ng-click="loadShow('show/1')"> Cenimatic
                </a> </div>
         </div>
-        <div class="col-xs-6"> </div>
-        <div class="col-xs-4">
+        <div class="text-right searchBar" ng-controller="tvAppCtrl">
+          <form class="form-inline" ng-submit="searchShow()" name="searchfrm">
+            <div class="form-group">
+              <div class="input-group">
+                <input type="text " class="form-control" ng-model="search" id=" search" placeholder="Search.. " <required></required>
+                <div type="submit" class="input-group-addon glyphicon glyphicon-search "></div>
+              </div>
+            </div>
+          </form>
         </div>
 
 
       </div>
     </div>
   </nav>
-  <div class="overlay" ng-show="isLoading">
-    <i class="fa fa-circle-o-notch fa-spin spinner"></i>
+  <div class="overlay " ng-show="isLoading ">
+    <i class="fa fa-circle-o-notch fa-spin spinner "></i>
   </div>
   <div ng-view></div>
 
-  <div class="text-center" ng-hide="isLoading">
+  <div class="text-center " ng-hide="isLoading ">
     Copyright &copy 2017
     <br> <br>
   </div>

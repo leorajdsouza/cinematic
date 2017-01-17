@@ -36,6 +36,17 @@ var app = angular.module('tvApp', ['ngRoute'])
             showListService.getShows($scope.showsCallback, $scope.page_no);
         }
 
+        $scope.searchCallback = function (data) {
+            console.log(data);
+
+        }
+        $scope.searchShow = function () {            
+            if (!$scope.search == undefined || !$scope.search == "") {
+                showListService.searchShow($scope.searchCallback, $scope.search);
+            }
+
+
+        }
 
     });
 
@@ -96,6 +107,11 @@ app.service('showListService', function ($http) {
     }
     this.showCount = function (callback) {
         $http.get(appConfig.endPoint + '/shows/').then(function (response) {
+            callback(response.data);
+        });
+    }
+    this.searchShow = function (callback, search) {
+        $http.get(appConfig.endPoint + '/shows/1?keywords=' + search).then(function (response) {
             callback(response.data);
         });
     }

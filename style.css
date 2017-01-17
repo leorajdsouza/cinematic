@@ -30,10 +30,13 @@ border-radius: 10px;
  }
  .episode{
      padding-left: 40px;
+     padding-top: 10px;
+     padding-top: 10px;
  }
  .seasonbr{
-     line-height: 2;
      font-weight: bold;
+    display: block;
+    margin-top: 20px;
  }
 
  .tr-grn{
@@ -51,4 +54,13 @@ border-radius: 10px;
     right: 98px;   
     color: #fff;
     border-radius: 0px 0px 10px 10px;
+ }
+
+ .searchBar{
+         margin-top: 8px;         
+ }
+
+
+ .searchBar .glyphicon{          
+         top: 0px;
  }
