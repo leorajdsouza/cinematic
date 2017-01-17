@@ -1,10 +1,11 @@
 # cinematic
-Search
+
+#Search
 allows you search tv shows by keyword
 
-Lists
+#Lists
 lists out all tv shows
 
-Show details 
+#Show details 
 Fetches all data along with torrent magnet  link
 
