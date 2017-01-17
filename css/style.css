@@ -89,3 +89,7 @@ border-radius: 10px;
     transform: rotate(359deg);
   }
 }
+
+.episode .btn-group{
+  margin-left: 70px;
+}

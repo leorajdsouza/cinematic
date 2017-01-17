@@ -32,9 +32,14 @@
                                         <div ng-repeat="seasons in showDataMore.episodes | orderBy:'-season'">
                                                 <span class="seasonbr sub-title" ng-show="seasons.episode == 1"> Seasons {{seasons.season}} :
                                                 </span>
-                                               
+
                                                 <div class="episode">
-                                                        <div class="glyphicon glyphicon-magnet tr-grn"></div> Episode {{seasons.episode}} : <i> {{seasons.title}}</i>
+                                                          Episode {{seasons.episode}} : <i> {{seasons.title}}</i>
+                                                        <br>
+                                                        <div class="btn-group" role="group">
+                                                                <button ng-repeat="(key, value) in seasons.torrents" type="button" ng-click="openTorrent(value.url)" class="btn btn-default"><span class="glyphicon glyphicon-magnet tr-grn"></span> {{key}}</button>
+                                                        </div>
+
                                                 </div>
                                         </div>
                                         <hr>

@@ -71,6 +71,10 @@ app.controller('tvshow', function ($scope, showListService, $routeParams, $rootS
     $scope.UnquieShowID = function (id) {
         return true;
     }
+
+    $scope.openTorrent = function (magnet) {
+        alert(magnet);
+    }
 });
 
 /*
