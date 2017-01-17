@@ -1,4 +1,5 @@
 # Cinematic App
+A simplified torent app to browse and search tv shows.
 
 #Search
   Allows you to search tv shows by keyword
