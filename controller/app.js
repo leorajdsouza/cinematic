@@ -1,7 +1,7 @@
 var appConfig = {
-    showList: "https://eztvapi.ml/shows",
-    showMore: "https://eztvapi.ml/show",
-    endPoint: "https://eztvapi.ml"
+    showList: "http://cors.io/?u=https://eztvapi.ml/shows",
+    showMore: "http://cors.io/?u=https://eztvapi.ml/show",
+    endPoint: "http://cors.io/?u=https://eztvapi.ml"
 };
 
 /*
