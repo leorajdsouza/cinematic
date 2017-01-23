@@ -9,7 +9,6 @@ var appConfig = {
 */
 
 var app = angular.module('tvApp', ['ngRoute']);
-
 app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $location) {
     $rootScope.isLoading = true;
     $scope.page_no = 1;
@@ -100,22 +99,22 @@ app.config(function ($routeProvider) {
 */
 app.service('showListService', function ($http) {
     this.getShows = function (callback, page_no) {
-        $http.get(appConfig.endPoint + "/shows/" + page_no).then(function (response) {
+        $http.get({method: 'JSONP', url: appConfig.endPoint + "/shows/" + page_no    }).then(function (response) {
             callback(response.data);
         });
     }
     this.getShow = function (callback, show_id) {
-        $http.get(appConfig.endPoint + '/show/' + show_id).then(function (response) {
+        $http.get({method: 'JSONP', url: appConfig.endPoint + '/show/' + show_id}).then(function (response) {
             callback(response.data);
         });
     }
     this.showCount = function (callback) {
-        $http.get(appConfig.endPoint + '/shows/').then(function (response) {
+        $http.get({method: 'JSONP', url: appConfig.endPoint + '/shows/'}).then(function (response) {
             callback(response.data);
         });
     }
     this.searchShow = function (callback, search) {
-        $http.get(appConfig.endPoint + '/shows/1?keywords=' + search).then(function (response) {
+        $http.get({method: 'JSONP', url: appConfig.endPoint + '/shows/1?keywords=' + search}).then(function (response) {
             callback(response.data);
         });
     }
