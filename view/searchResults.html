@@ -3,7 +3,7 @@
         <div class="container-fluid" ng-controller="tvAppCtrl">
             <div class="row">
                 <h3> Search results: </h2> <br>
-                    <div class="col-xs-3" ng-repeat="results in searchResults">
+                    <div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="results in searchResults">
                         <img ng-src="{{results.images.poster}}" height="150 " width="100px ">
                         <br> <br><a href="#shows/{{results._id}}" /> {{results.title}} ( {{results.year}}) </a>
                         <br><br>
