@@ -73,7 +73,7 @@ app.controller('tvshow', function ($scope, showListService, $routeParams, $rootS
     }
 
     $scope.openTorrent = function (magnet) {
-        alert(magnet);
+         window.open(magnet);
     }
 });
 
