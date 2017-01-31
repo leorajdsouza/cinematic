@@ -9,10 +9,24 @@ var appConfig = {
 */
 
 var app = angular.module('tvApp', ['ngRoute']);
-app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $location) {
+app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $location, $window) {
     $rootScope.isLoading = true;
     $scope.page_no = 1;
     $scope.search = "";
+
+    /* Detect end of page*/
+
+    angular.element($window).bind("scroll", function () {
+        var windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+        var body = document.body, html = document.documentElement;
+        var docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+        windowBottom = windowHeight + window.pageYOffset;
+
+        if (windowBottom >= docHeight) {
+            console.log("load now");
+        }
+    });
+
     /*
     Load show total count for Navigation
     */
@@ -21,7 +35,9 @@ app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $loca
     }
     $scope.showCount = showListService.showCount($scope.showCountCallback);
 
+    /* Get tv shows */
     $scope.showsCallback = function (data) {
+        console.log(data);
         window.scrollTo(0, 0);
         if (!data.length <= 0) {
             $scope.shows = data;
@@ -73,7 +89,7 @@ app.controller('tvshow', function ($scope, showListService, $routeParams, $rootS
     }
 
     $scope.openTorrent = function (magnet) {
-         window.open(magnet);
+        window.open(magnet, "_blank");
     }
 });
 
