@@ -18,12 +18,12 @@ Fetches all data along with torrent magnet link
 
 #RoadMap
 --------
--List out all shows with auto load features
--Follow shows 
--PoucDb intergration
--Offline db
--Support other tv shows api
--Intergrate require js 
--Project structure and architechture
--Test case- unit testing
--Docs and help section
+-List out all shows with auto load features <br>
+-Follow shows <br>
+-PoucDb intergration<br>
+-Offline db<br>
+-Support other tv shows api<br>
+-Intergrate require js <br>
+-Project structure and architechture<br>
+-Test case- unit testing<br>
+-Docs and help section<br>
