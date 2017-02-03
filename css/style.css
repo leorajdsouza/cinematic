@@ -38,7 +38,7 @@ font-family: 'Work Sans', sans-serif;
 }
 .show-name{
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 16px;
 }
 .show-box-title p{
   line-height: 9px;
@@ -86,6 +86,42 @@ font-family: 'Work Sans', sans-serif;
   color:#07B3D7
 }
 
+.shw-info .row{
+  margin-bottom:15px; 
+  
+}
+.shw-info {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+
+.season-select {
+     background: #16171B;
+    display: block;
+    width: 100%;
+    height: 34px;
+    border-radius: 17px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #07B3D7; 
+    background-image: none;
+    border: 1px solid #fff;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.season-select:focus { 
+   outline: #16171B;
+} 
+ 
+
+
 /* end new design*/
 
 /*img{
@@ -111,26 +147,32 @@ border-radius: 10px;
     z-index: 20;
 }
 
- .title{
-     color:#E5562E;
+ .show-mr-title{
+     color:#fff;
+     font-weight: bold;
+     text-transform: uppercase;      
+     font-size: 30px;
      -webkit-font-smoothing: antialiased;
  }
  .sub-title{
-   color:#E5562E;
+    color: #06D6F8;
+ }
+ .txt-color{
+ color: #fff;
  }
  .episode{
      padding-left: 40px;
      padding-top: 10px;
      padding-top: 10px;
  }
- .seasonbr{
+ /*.seasonbr{
      font-weight: bold;
     display: block;
     margin-top: 20px;
- }
+ }*/
 
  .tr-grn{
-    color: #449D44;
+     color: #06D6F8;
     font-size: 10px;
  }
  .poster-shadow{

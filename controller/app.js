@@ -16,16 +16,16 @@ app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $loca
 
     /* Detect end of page*/
 
-    angular.element($window).bind("scroll", function () {
-        var windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
-        var body = document.body, html = document.documentElement;
-        var docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-        windowBottom = windowHeight + window.pageYOffset;
+    // angular.element($window).bind("scroll", function () {
+    //     var windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+    //     var body = document.body, html = document.documentElement;
+    //     var docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+    //     windowBottom = windowHeight + window.pageYOffset;
 
-        if (windowBottom >= docHeight) {
-            console.log("load now");
-        }
-    });
+    //     if (windowBottom >= docHeight) {
+    //         console.log("load now");
+    //     }
+    // });
 
     /*
     Load show total count for Navigation
@@ -37,7 +37,7 @@ app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $loca
 
     /* Get tv shows */
     $scope.showsCallback = function (data) {
-        console.log(data);
+        // console.log(data);
         window.scrollTo(0, 0);
         if (!data.length <= 0) {
             $scope.shows = data;
@@ -77,10 +77,30 @@ app.run(function ($rootScope) {
 */
 app.controller('tvshow', function ($scope, showListService, $routeParams, $rootScope) {
     $rootScope.isLoading = true;
+    $scope.episodes = [];
     $scope.showCallback = function (data) {
+
         $scope.showDataMore = data;
-        console.log($scope.showDataMore);
+        $scope.episodes = $scope.showDataMore.episodes;
+        $scope.seasonDups();
         $rootScope.isLoading = false;
+    }
+    $scope.seasonDups = function () {
+        $scope.seasonCount = [];
+        for (var i = 0; i < $scope.episodes.length; i++) {
+            console.log($scope.episodes[i].season);
+            if ($scope.seasonCount.indexOf($scope.episodes[i].season) == - 1) {
+                $scope.seasonCount.push($scope.episodes[i].season);
+            }
+        }
+
+        console.log($scope.seasonCount);
+    }
+
+
+
+    $scope.dups = function () {
+
     }
 
     showListService.getShow($scope.showCallback, $routeParams.show_id);
