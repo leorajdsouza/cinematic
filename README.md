@@ -16,7 +16,7 @@ Fetches all data along with torrent magnet link
   Bootstrap
 
 
-#RoadMap
+#Road Maps
 --------
 -List out all shows with auto load features <br>
 -Follow shows <br>
