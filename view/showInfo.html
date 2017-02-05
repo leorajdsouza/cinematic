@@ -29,19 +29,22 @@
                                                 <span class="sub-title">Number of seasons: </span>
                                                 <b>{{showDataMore.num_seasons}}</b> <i> ({{showDataMore.status}})</i>
                                                 </span>
+                                                 <select ng-model="selectedSeason" class="season-select">
+                                                    <option value="">All</option>
+                                                     <option ng-repeat="season in seasonCount" value="{{season}}"> Season {{season}}</option>
+			                        </select> 
 
-                                                <select class="season-select">
-                                                     <option ng-model="selectedSeason" ng-repeat="season in seasonCount"> Season {{season}}</option>
-			                        </select>
-                                                <!-- shows list -->
-
-                                                <div ng-repeat="seasons in showDataMore.episodes | filter:selectedSeason | orderBy:'-season'">                                                        
-                                                        <div class="episode">
-                                                                Episode {{seasons.episode}} : <i> {{seasons.title}}</i>
-                                                                <!--<br>
+                                                <!-- shows list --> 
+                                                <div ng-repeat="seasons in showDataMore.episodes | filter:{'season':selectedSeason} | orderBy:'-season'">                                                        
+                                                        <div class="episode"> 
+                                                                S{{seasons.season}}Episode {{seasons.episode}} : <i> {{seasons.title}}</i>
+                                                                    <!--<span ng-repeat="(key, value) in seasons.torrents" type="button" class="btn btn-default">  
+                                                                       <a href="{{value}}"> {{key}} </a></span>
+                                                             -->
+                                                                <br>
                                                                 <div class="btn-group" role="group">
-                                                                        <button ng-repeat="(key, value) in seasons.torrents" type="button" ng-click="openTorrent(value.url)" class="btn btn-default"><span class="glyphicon glyphicon-magnet tr-grn"></span> {{key}}</button>
-                                                                </div>-->
+                                                                        <button  ng-repeat="(key, value) in seasons.torrents" type="button" ng-click="openTorrent(value.url)" class="btn btn-default torrent-bar"><span class="glyphicon glyphicon-magnet tr-grn"></span> {{key}}</button>
+                                                                </div> 
 
                                                         </div>
                                                 </div>

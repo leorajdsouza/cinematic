@@ -37,9 +37,10 @@ app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $loca
 
     /* Get tv shows */
     $scope.showsCallback = function (data) {
-        // console.log(data);
-        window.scrollTo(0, 0);
+          console.log(data);
+     //   window.scrollTo(0, 0);
         if (!data.length <= 0) {
+             $scope.shows=[];
             $scope.shows = data;
         } else {
             alert("Shows not available")
@@ -51,13 +52,14 @@ app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $loca
     $scope.loadShow = function (urlId) {
         $rootScope.isLoading = true;
         $scope.page_no = urlId.split("/")[1];
+         console.log($scope.page_no);
         showListService.getShows($scope.showsCallback, $scope.page_no);
     }
 
     $scope.searchCallback = function (data) {
         $rootScope.searchResults = data;
         $location.path("search");
-        console.log($scope.searchResults);
+       // console.log($scope.searchResults);
     }
 
     $scope.searchShow = function () {
@@ -67,11 +69,7 @@ app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $loca
     }
 
 });
-
-app.run(function ($rootScope) {
-
-});
-
+ 
 /*
     Single show info
 */
@@ -88,28 +86,24 @@ app.controller('tvshow', function ($scope, showListService, $routeParams, $rootS
     $scope.seasonDups = function () {
         $scope.seasonCount = [];
         for (var i = 0; i < $scope.episodes.length; i++) {
-            console.log($scope.episodes[i].season);
             if ($scope.seasonCount.indexOf($scope.episodes[i].season) == - 1) {
                 $scope.seasonCount.push($scope.episodes[i].season);
             }
         }
-
-        console.log($scope.seasonCount);
+      
+        //         $scope.selectedSeason = $scope.seasonCount[seasonCount.length-1].value;
     }
+ 
 
-
-
-    $scope.dups = function () {
-
-    }
+    //ng-init="selectedSeason=seasonCount[seasonCount.length-1]"
 
     showListService.getShow($scope.showCallback, $routeParams.show_id);
     $scope.UnquieShowID = function (id) {
         return true;
     }
 
-    $scope.openTorrent = function (magnet) {
-        window.open(magnet, "_blank");
+    $scope.openTorrent = function (magnet) { 
+        window.location.replace(magnet);
     }
 });
 
@@ -136,7 +130,10 @@ app.config(function ($routeProvider) {
 app.service('showListService', function ($http) {
     this.getShows = function (callback, page_no) {
         $http.get(appConfig.endPoint + "/shows/" + page_no).then(function (response) {
-            callback(response.data);
+            if(response.status == 200){
+                callback(response.data);
+            }
+           
         });
     }
     this.getShow = function (callback, show_id) {

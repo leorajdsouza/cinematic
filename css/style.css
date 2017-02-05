@@ -120,7 +120,17 @@ font-family: 'Work Sans', sans-serif;
    outline: #16171B;
 } 
  
+ .torrent-bar{
+   background: #16171B;
+   
+   color: #07B3D7;
+ }
 
+.torrent-bar:hover {
+    color: #07B3D7;
+     background-color: #0B0C10;
+    /* border-color: #adadad; */
+}
 
 /* end new design*/
 
@@ -160,16 +170,9 @@ border-radius: 10px;
  .txt-color{
  color: #fff;
  }
- .episode{
-     padding-left: 40px;
+ .episode{ 
      padding-top: 10px;
-     padding-top: 10px;
- }
- /*.seasonbr{
-     font-weight: bold;
-    display: block;
-    margin-top: 20px;
- }*/
+ } 
 
  .tr-grn{
      color: #06D6F8;
@@ -191,8 +194,7 @@ border-radius: 10px;
  .searchBar{
          margin-top: 8px;         
  }
-
-
+ 
  .searchBar .glyphicon{          
          top: 0px;
  }
