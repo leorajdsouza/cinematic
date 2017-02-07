@@ -40,14 +40,15 @@ font-family: 'Work Sans', sans-serif;
 .show-box-title{
     position: absolute;
     padding: 10px;
+    margin: 4px;
   
 }
 .show-name{
   text-transform: uppercase;
   font-size: 16px;
 }
-.show-box-title p{
-  line-height: 9px;
+.show-box-title p{ 
+  line-height: 1.2em;
 }
 .show-box-title-clr{
  font-family: 'Rubik', sans-serif;
