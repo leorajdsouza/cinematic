@@ -10,6 +10,7 @@ font-family: 'Work Sans', sans-serif;
 
 * { 
     -webkit-font-smoothing: antialiased;
+     outline: none!important; 
 }
 
 .show-title, a{
@@ -47,7 +48,7 @@ font-family: 'Work Sans', sans-serif;
   text-transform: uppercase;
   font-size: 16px;
 }
-.show-box-title p{ 
+.show-box-title p{  
   line-height: 1.2em;
 }
 .show-box-title-clr{
@@ -128,17 +129,27 @@ font-family: 'Work Sans', sans-serif;
 } 
  
  .torrent-bar{
-   background: #16171B;
-   
+   background: #000; 
    color: #1db954;
+   min-width:  100px !important;
  }
 
-.torrent-bar:hover {
-    color: #1db954;
-     background-color: #0B0C10;
-    /* border-color: #adadad; */
+ 
+.torrent-bar:hover { 
+     background-color: #0B0C10!important;  
 }
-
+.torrent-bar:visited { 
+     background-color: #0B0C10!important; 
+     outline: none!important; 
+}
+.torrent-bar:active { 
+     background-color: #0B0C10!important;  
+}
+.torrent-bar:focus { 
+     background-color: #0B0C10!important;  
+}
+ 
+  
 
 .btn {
     color: #fff;
@@ -183,6 +194,30 @@ font-family: 'Work Sans', sans-serif;
       margin: 0 auto;
     display: block;
 }
+
+.detail-img{
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+
+ @media screen and (max-width:700px)
+{
+  .txt-center{
+    text-align: center;
+  }
+   .episode .btn-group{
+  margin-left: 10px !important;
+}
+}
+ 
+ .episode .btn-group{
+  margin-left: 70px;
+}
+
+
+
+
+
+
 /* end new design*/
 
 /*img{
@@ -275,9 +310,7 @@ border-radius: 10px;
   }
 }
 
-.episode .btn-group{
-  margin-left: 70px;
-}
+
 
 .searchBar{
       margin-left: 20px;
