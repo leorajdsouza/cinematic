@@ -1,7 +1,7 @@
 var appConfig = {
-    showList: "https://eztvapi.ml/shows",
-    showMore: "https://eztvapi.ml/show",
-    endPoint: "https://eztvapi.ml"
+    showList: "https://api-fetch.website/tv/shows",
+    showMore: "https://api-fetch.website/tv/show",
+    endPoint: "https://api-fetch.website/tv/"
 };
 
 /*
@@ -37,29 +37,40 @@ app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $loca
 
     /* Get tv shows */
     $scope.showsCallback = function (data) {
-          console.log(data);
-     //   window.scrollTo(0, 0);
+        console.log(data);
+        //   window.scrollTo(0, 0);
         if (!data.length <= 0) {
-             $scope.shows=[];
+            $scope.shows = [];
             $scope.shows = data;
         } else {
             alert("Shows not available")
         }
         $rootScope.isLoading = false;
     }
+
+    $scope.loadMore = function (data) {
+        //   window.scrollTo(0, 0);
+
+        //$scope.shows.push(data);
+
+        $scope.shows = $scope.shows.concat(data);
+        console.log($scope.shows);
+        $rootScope.isLoading = false;
+    }
+
     showListService.getShows($scope.showsCallback, $scope.page_no);
 
-    $scope.loadShow = function (urlId) {
+    $scope.loadShow = function (id) {
         $rootScope.isLoading = true;
-        $scope.page_no = urlId.split("/")[1];
-         console.log($scope.page_no);
-        showListService.getShows($scope.showsCallback, $scope.page_no);
+        $scope.page_no = id + 1;
+        console.log($scope.page_no);
+        showListService.getShows($scope.loadMore, $scope.page_no);
     }
 
     $scope.searchCallback = function (data) {
         $rootScope.searchResults = data;
         $location.path("search");
-       // console.log($scope.searchResults);
+        // console.log($scope.searchResults);
     }
 
     $scope.searchShow = function () {
@@ -69,7 +80,7 @@ app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $loca
     }
 
 });
- 
+
 /*
     Single show info
 */
@@ -90,10 +101,10 @@ app.controller('tvshow', function ($scope, showListService, $routeParams, $rootS
                 $scope.seasonCount.push($scope.episodes[i].season);
             }
         }
-      
+
         //         $scope.selectedSeason = $scope.seasonCount[seasonCount.length-1].value;
     }
- 
+
 
     //ng-init="selectedSeason=seasonCount[seasonCount.length-1]"
 
@@ -102,7 +113,7 @@ app.controller('tvshow', function ($scope, showListService, $routeParams, $rootS
         return true;
     }
 
-    $scope.openTorrent = function (magnet) { 
+    $scope.openTorrent = function (magnet) {
         window.location.replace(magnet);
     }
 });
@@ -119,10 +130,9 @@ app.config(function ($routeProvider) {
         controller: "tvshow"
     }).when("/search", {
         templateUrl: "view/searchResults.html",
-        controller: "tvAppCtrl"
+        //controller: "tvAppCtrl"
     });
 });
-
 
 /*
     Service to load shows list
@@ -130,10 +140,11 @@ app.config(function ($routeProvider) {
 app.service('showListService', function ($http) {
     this.getShows = function (callback, page_no) {
         $http.get(appConfig.endPoint + "/shows/" + page_no).then(function (response) {
-            if(response.status == 200){
+            console.log(response);
+            if (response.status == 200) {
                 callback(response.data);
             }
-           
+
         });
     }
     this.getShow = function (callback, show_id) {
