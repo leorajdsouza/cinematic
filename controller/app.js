@@ -84,8 +84,10 @@ app.controller('showsDetailsCtrl', function ($scope, showListService, $routePara
         $scope.episodes = $scope.showDataMore.episodes;
         $scope.seasonDups();
         $rootScope.isLoading = false;
+          console.log($scope.episodes);
     }
 
+  
     /*Remove duplicate season values*/
     $scope.seasonDups = function () {
         $scope.seasonCount = [];

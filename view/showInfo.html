@@ -1,59 +1,57 @@
 <div class="container" ng-hide="isLoading">
         <div class="row">
                 <div class="container-fluid">
-                        <div class="row shw-info"> 
-                                        <div class="col-xs-12 col-sm-12 col-md-3 txt-color txt-center">
-                                        
-                                                <div class="row">
-                                                        <img class="detail-img" ng-src="{{showDataMore.images.poster}}" height="300" width="200" />
-                                                </div>
+                        <div class="row shw-info">
+                                <div class="col-xs-12 col-sm-12 col-md-3 txt-color txt-center">
 
-                                                <div class="row show-mr-title"> {{showDataMore.title}}</div>
-
-                                                <div class="row"><b>Year:</b> {{showDataMore.year}} </div>
-                                                <div class="row">Rating: <b class="sub-title">{{showDataMore.rating.percentage | number:2}}%</b></div>
+                                        <div class="row">
+                                                <img class="detail-img" ng-src="{{showDataMore.images.poster}}" height="300" width="200" />
                                         </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-9 txt-color">
-                                                <div class="row">
-                                                        <h2>Synopsis:</h2>
-                                                        {{showDataMore.synopsis}}
-                                                </div>
-                                                <div class="row">
-                                                        <span class="sub-title">Genre:</span>
-                                                        <div class="">
-                                                                <i ng-repeat="genre in showDataMore.genres">
+
+                                        <div class="row show-mr-title"> {{showDataMore.title}}</div>
+
+                                        <div class="row"><b>Year:</b> {{showDataMore.year}} </div>
+                                        <div class="row">Rating: <b class="sub-title">{{showDataMore.rating.percentage | number:2}}%</b></div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-9 txt-color">
+                                        <div class="row">
+                                                <h2>Synopsis:</h2>
+                                                {{showDataMore.synopsis}}
+                                        </div>
+                                        <div class="row">
+                                                <span class="sub-title">Genre:</span>
+                                                <div class="">
+                                                        <i ng-repeat="genre in showDataMore.genres">
                                                  {{genre}}<span ng-show="!$last">, </span>
                                                          </i>
-                                                        </div>
+                                                </div>
 
-                                                        <span class="row">
+                                                <span class="row">
                                                 <span class="sub-title">Number of seasons: </span>
-                                                        <b>{{showDataMore.num_seasons}}</b> <i> ({{showDataMore.status}})</i>
-                                                        </span>
-                                                        <select ng-model="selectedSeason" class="season-select">
+                                                <b>{{showDataMore.num_seasons}}</b> <i> ({{showDataMore.status}})</i>
+                                                </span>
+                                                <select ng-model="selectedSeason" class="season-select">
                                                     <option value="">All</option>
                                                      <option ng-repeat="season in seasonCount" value="{{season}}"> Season {{season}}</option>
 			                        </select>
 
-                                                        <!-- shows list -->
-                                                        <div ng-repeat="seasons in showDataMore.episodes | filter:{'season':selectedSeason} | orderBy:'-season'">
-                                                                <div class="episode">
-                                                                        S{{seasons.season}}Episode {{seasons.episode}} : <i> {{seasons.title}}</i>
-                                                                        <!--<span ng-repeat="(key, value) in seasons.torrents" type="button" class="btn btn-default">  
-                                                                       <a href="{{value}}"> {{key}} </a></span>
-                                                             -->
-                                                                        <br>
-                                                                        <div class="btn-group" role="group">
-                                                                                <button ng-repeat="(key, value) in seasons.torrents" type="button" ng-click="openTorrent(value.url)" class="btn btn-default torrent-bar">
+                                                <!-- shows list -->
+                                                <div ng-repeat="seasons in showDataMore.episodes | filter:{'season':selectedSeason} | orderBy:'episode':true">
+                                                        <div class="episode">
+                                                                S{{seasons.season}}Episode {{seasons.episode}} : <i> {{seasons.title}}</i>
+                                                                <br> <br> 
+                                                                <p> <i class="sub-title">Overview :</i> {{seasons.overview}}</p>
+                                                                <div class="btn-group" role="group">
+                                                                        <button ng-repeat="(key, value) in seasons.torrents" type="button" ng-click="openTorrent(value.url)" class="btn btn-default torrent-bar">
                                                                                  <span class="glyphicon glyphicon-magnet tr-grn"></span> {{key==0?"264p":key}}
                                                                                  </button>
-                                                                        </div>
-
                                                                 </div>
-                                                        </div>
 
+                                                        </div>
                                                 </div>
-                                        </div> 
+
+                                        </div>
+                                </div>
                         </div>
                 </div>
         </div>
