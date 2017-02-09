@@ -234,14 +234,38 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
  .episode .btn-group{
   margin-left: 70px;
 }
-
+ 
 
 /* footer css*/
 .margin15 {
-margin: 15px;
-color: #fff;
+  margin: 15px;
+  color: #fff;
 }
 
+.nav-pills>li a{
+   color: #1db954 !important;
+   margin-bottom: 20px; 
+}
+ 
+ .nav-pills{
+   display: table;
+    margin: 0 auto;
+    font-size: 16px; 
+ }
+ 
+.nav-pills>li a:hover {
+   background-color: #16171B;  
+   color: #fff;
+}
+
+.nav-pills>li a.active {
+    border-bottom: 2px solid;
+    border-radius: 0px;
+}
+
+.padB15{
+  padding-bottom: 7px;
+}
 
 /* end new design*/
 
