@@ -16,9 +16,8 @@ Fetches all data along with torrent magnet link
   Bootstrap
 
 
-#Road Maps
+#Road Map
 --------
--List out all shows with auto load features <br>
 -Follow shows <br>
 -PoucDb intergration<br>
 -Offline db<br>
