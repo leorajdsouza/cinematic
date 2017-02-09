@@ -31,21 +31,21 @@
                                                 <b>{{showDataMore.num_seasons}}</b> <i> ({{showDataMore.status}})</i>
                                                 </span>
                                                 <select ng-model="selectedSeason" class="season-select">
-                                                    <option value="">All</option>
+                                                   
                                                      <option ng-repeat="season in seasonCount" value="{{season}}"> Season {{season}}</option>
 			                        </select>
 
                                                 <!-- shows list -->
                                                 <div ng-repeat="seasons in showDataMore.episodes | filter:{'season':selectedSeason} | orderBy:'episode':true">
                                                         <div class="episode">
-                                                                S{{seasons.season}}Episode {{seasons.episode}} : <i> {{seasons.title}}</i>
-                                                                <br> <br> 
-                                                                <p> <i class="sub-title">Overview :</i> {{seasons.overview}}</p>
+                                                                <span class="sub-title"> Episode {{seasons.episode}} :</span> <i> {{seasons.title}}</i>
+                                                                <br> 
+                                                                <!--<p> <i class="sub-title">Overview :</i> {{seasons.overview}}</p>-->
                                                                 <div class="btn-group" role="group">
                                                                         <button ng-repeat="(key, value) in seasons.torrents" type="button" ng-click="openTorrent(value.url)" class="btn btn-default torrent-bar">
                                                                                  <span class="glyphicon glyphicon-magnet tr-grn"></span> {{key==0?"264p":key}}
-                                                                                 </button>
-                                                                </div>
+                                                                        </button>
+                                                                </div> 
 
                                                         </div>
                                                 </div>
