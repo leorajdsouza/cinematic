@@ -31,6 +31,7 @@ Fetches all data along with torrent magnet link
 - Test case- unit testing<br>
 - Docs and help section<br>
 <br>
----Wave 2<br>
+
+--Wave 2<br>
 - Movies lists
 - Suggestion bot - checks for already watched and sugguest based on config
