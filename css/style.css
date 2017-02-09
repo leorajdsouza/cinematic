@@ -86,8 +86,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 .search-control { 
    outline: none;
 } 
- 
-
+  
 .input-group-addon {
     padding: 6px 12px;
     font-size: 14px;
@@ -257,6 +256,18 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
    background-color: #16171B;  
    color: #fff;
 }
+
+.nav-pills>li a:visited {
+   background-color: #16171B;  
+   color: #fff;
+}
+
+.nav-pills>li a:active {
+   background-color: #16171B;  
+   color: #fff;
+}
+
+
 
 .nav-pills>li a.active {
     border-bottom: 2px solid;
