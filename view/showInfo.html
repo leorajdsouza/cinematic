@@ -33,6 +33,7 @@
                                                 <span class="sub-title">Number of seasons: </span>
                                                 <b>{{showDataMore.num_seasons}}</b> <i> ({{showDataMore.status}})</i>
                                                 </span>
+                                                <!-- can be replaced with bootstrap dropdown-->
                                                 <select ng-model="selectedSeason" class="season-select">                                                   
                                                      <option ng-repeat="season in seasonCount" value="{{season}}"> Season {{season}}</option>
 			                        </select>

@@ -1,20 +1,27 @@
-<nav class="navbar navbar-default navbar-static-top">
-  <div class="container">
-    <div class="row">
-      <div class="">
-        <div class="navbar-header"> <a class="navbar-brand logo" href="#" ng-click="loadShow('show/1')"> CENEMATIC
-               </a> </div>
-      </div>
-      <div class="text-right searchBar">
-        <form class="form-inline searchBar" ng-submit="searchShow()" name="searchfrm">
-          <div class="form-group">
-            <div class="input-group">
-              <input type="text" autocomplete="off" class="search-control" ng-model="search" id=" search" placeholder="Search.." required />
-              <div type="submit" ng-click="searchShow()" class="input-group-addon glyphicon glyphicon-search "></div>
+<div>
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="row">
+        <div class="navbar-header">
+          <a class="navbar-brand logo" href="#" ng-click="loadShow('show/1')"> CENEMATIC</a>
+        </div>
+        <div class="text-right searchBar">
+          <form class="form-inline searchBar" ng-submit="searchShow()" name="searchfrm">
+            <div class="form-group">
+              <div class="input-group">
+                <input type="text" autocomplete="off" class="search-control" ng-model="search" id=" search" placeholder="Search.." required
+                />
+                <div type="submit" ng-click="searchShow()" class="input-group-addon glyphicon glyphicon-search "></div>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+  <ul class="nav nav-pills">
+    <li><a href="#">Shows</a></li>
+    <li><a href="#">Watchlist</a></li>
+    <li><a href="#">Calendar</a></li>
+  </ul>
+</div>
