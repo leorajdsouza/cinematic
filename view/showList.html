@@ -7,16 +7,16 @@
                     <div class="col-xs-12 col-sm-6 col-md-4 show-title" ng-repeat="myShows in shows">
                         <!--<div class="clearfix visible-xs"></di   v>-->
                         <a href="#shows/{{myShows._id}}">
-                        <div ng-class="{'show-display-box':$even,'show-display-box-1':$odd}">
-                            <!--<a href="#shows/{{myShows._id}}" />-->
-                            <span> <img ng-src="{{myShows.images.banner}}" height="150 " width="100px "></span>
-                            <span class="show-box-title">
+                            <div ng-class="{'show-display-box':$even,'show-display-box-1':$odd}">
+                                <!--<a href="#shows/{{myShows._id}}" />-->
+                                <span> <img ng-src="{{myShows.images.banner}}" height="150 " width="100px "></span>
+                                <span class="show-box-title">
                                 <p class="show-name">{{myShows.title}}</p> <br>
                                 <p class="show-box-title-clr">First episode year: <span class="show-box-title-subclr"> {{myShows.year}} </span></p>
-                            <p class="show-box-title-clr">Seasons: <span class="show-box-title-subclr"> {{myShows.num_seasons}}</span></p>
-                              
-                            </span>
-                        </div>
+                                <p class="show-box-title-clr">Seasons: <span class="show-box-title-subclr"> {{myShows.num_seasons}}</span></p>
+
+                                </span>
+                            </div>
                         </a>
                     </div>
 
@@ -32,7 +32,7 @@
                     </ul>
                 </nav>
 
-            </div>--> 
+            </div>-->
             <button ng-click="loadShow(page_no-1+1)" class="btn btn-green center-me">Load More</button>
         </div>
     </div>
