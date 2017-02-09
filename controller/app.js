@@ -1,7 +1,5 @@
 
-var appConfig = {
-    showList: "https://api-fetch.website/tv/shows",
-    showMore: "https://api-fetch.website/tv/show",
+var appConfig = { 
     endPoint: "https://api-fetch.website/tv/"
 };
 
