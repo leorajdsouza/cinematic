@@ -106,17 +106,18 @@ font-family: 'Work Sans', sans-serif;
 
 
 .season-select {
-     background: #16171B;
+  font-weight: bold;
+  border: 1px #000 solid;
+  border-radius: 0px;
+     background: #000;
     display: block;
     width: 100%;
-    height: 34px;
-    border-radius: 17px;
+    height: 34px; 
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
     color: #1db954; 
-    background-image: none;
-    border: 1px solid #fff;
+    background-image: none; 
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
@@ -124,6 +125,14 @@ font-family: 'Work Sans', sans-serif;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
+ 
+ 
+.season-select option {
+    margin: 40px;
+    background: rgba(0, 0, 0, 0.3);
+       color: #fff; 
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
 .season-select:focus { 
    outline: #16171B;
 } 
@@ -217,12 +226,10 @@ font-family: 'Work Sans', sans-serif;
 }
 
 
-
-.season-select option {
-    margin: 40px;
-    background: rgba(0, 0, 0, 0.3);
-    color: #fff;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+/* footer css*/
+.margin15 {
+margin: 15px;
+color: #fff;
 }
 
 

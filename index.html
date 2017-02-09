@@ -1,50 +1,28 @@
 <!doctype html>
-<html ng-app="tvApp">
+<html ng-app="cinematicApp">
 
-<head> 
+<head>
   <title>CENEMATIC</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link href="css/style.css" rel="stylesheet" />
-<!--  <link rel="stylesheet" href="css/font-awesome.min.css">-->
-  <script src="js/angular.min.js"></script>
-  <script src="js/angular-route.min.js"></script>
-  <script src="controller/app.js"></script>
 </head>
 
 <body>
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-      <div class="row">
-        <div class="">
-          <div class="navbar-header"> <a class="navbar-brand logo" href="#" ng-click="loadShow('show/1')"> CENEMATIC
-               </a> </div>
-        </div>
-        <div class="text-right searchBar">
-          <form class="form-inline searchBar" ng-submit="searchShow()" name="searchfrm">
-            <div class="form-group">
-              <div class="input-group">
-                <input type="text " class="form-control1" ng-model="search" id=" search" placeholder="Search.. " <required></required>
-                <div type="submit" ng-click="searchShow()" class="input-group-addon glyphicon glyphicon-search "></div>
-              </div>
-            </div>
-          </form>
-        </div> 
-
-      </div>
-    </div>
-  </nav>
+  <header></header>
+  <!--loading block-->
   <div class="overlay " ng-show="isLoading ">
     <i class="glyphicon glyphicon-refresh glyphicon-spin spinner "></i>
   </div>
   <div ng-view></div>
- <!--<div>  test app popup windows</div>-->
+
+  <!-- hide when shows are still loading-->
   <div class="text-center " ng-hide="isLoading ">
-    Copyright &copy 2017
-    <br> <br>
+    <footer></footer>
   </div>
 </body>
-
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="controller/app.js"></script>
 
 </html>

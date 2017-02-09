@@ -2,8 +2,9 @@
 /*
 To do
 ------
--move the codes to repective place
-
+-move the codes to repective place 
+- impliment requires js as it get complex
+-dont not remove any comment as comment contains features information
 
 */
 
@@ -12,12 +13,16 @@ var appConfig = {
     endPoint: "https://api-fetch.website/tv/"
 };
 
+
+var app = angular.module('cinematicApp', ['ngRoute']);
+
+
 /*
-    All Show list 
+ Controllers
 */
 
-var app = angular.module('tvApp', ['ngRoute']);
-app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $location, $window) {
+/* All Show list */
+app.controller('listShows', function ($scope, showListService, $rootScope, $location, $window) {
     $rootScope.isLoading = true;
     $scope.page_no = 1;
     $scope.search = "";
@@ -58,19 +63,9 @@ app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $loca
         showListService.getShows($scope.loadMore, $scope.page_no);
     }
 
-    $scope.searchCallback = function (data) {
-        $rootScope.searchResults = data;
-        $location.path("search");
-        // console.log($scope.searchResults);
-    }
-
-    $scope.searchShow = function () {
-        if (!$scope.search == undefined || !$scope.search == "") {
-            showListService.searchShow($scope.searchCallback, $scope.search);
-        }
-    }
 
 });
+
 
 /*
     Single show info
@@ -79,15 +74,13 @@ app.controller('showsDetailsCtrl', function ($scope, showListService, $routePara
     $rootScope.isLoading = true;
     $scope.episodes = [];
     $scope.showCallback = function (data) {
-
         $scope.showDataMore = data;
         $scope.episodes = $scope.showDataMore.episodes;
         $scope.seasonDups();
         $rootScope.isLoading = false;
-          console.log($scope.episodes);
+        console.log($scope.episodes);
     }
 
-  
     /*Remove duplicate season values*/
     $scope.seasonDups = function () {
         $scope.seasonCount = [];
@@ -96,8 +89,8 @@ app.controller('showsDetailsCtrl', function ($scope, showListService, $routePara
                 $scope.seasonCount.push($scope.episodes[i].season);
             }
         }
-        $scope.seasonCount = $scope.seasonCount.sort().reverse();    
-        $scope.selectedSeason = $scope.seasonCount[0].toString();        
+        $scope.seasonCount = $scope.seasonCount.sort().reverse();
+        $scope.selectedSeason = $scope.seasonCount[0].toString();
     }
 
     showListService.getShow($scope.showCallback, $routeParams.show_id);
@@ -107,10 +100,27 @@ app.controller('showsDetailsCtrl', function ($scope, showListService, $routePara
 
     $scope.openTorrent = function (magnet) {
         window.location.replace(magnet);
-        /* send toast notification to user */
+        /* send toast notification to user saying torrent has been added. e.g mac */
         // code goes here 
     }
 });
+
+
+/*
+    Show Search Api
+*/
+app.controller('showSearchCtrl', function ($scope, showListService, $rootScope, $location) {
+    //check if ur in search page else dont navigate
+    $scope.searchShow = function () {
+        $location.path("search");
+        showListService.searchShow($scope.searchCallback, $scope.search);
+    }
+
+    $scope.searchCallback = function (data) {
+        $scope.searchResults = data;
+    }
+});
+
 
 /*
     Navigation for Shows
@@ -118,14 +128,36 @@ app.controller('showsDetailsCtrl', function ($scope, showListService, $routePara
 app.config(function ($routeProvider) {
     $routeProvider.when("/", {
         templateUrl: "view/showList.html",
-        controller: "tvAppCtrl"
+        controller: "listShows"
     }).when("/shows/:show_id", {
         templateUrl: "view/showInfo.html",
         controller: "showsDetailsCtrl"
     }).when("/search", {
         templateUrl: "view/searchResults.html",
-        controller: "tvAppCtrl"
+        controller: "showSearchCtrl"
     });
+});
+
+
+
+/* Directives */
+
+app.directive('header', function () {
+    return {
+        restrict: 'E',
+        replace: true,
+        templateUrl: "view/header.html",
+        controller: 'showSearchCtrl'
+    }
+});
+
+app.directive('footer', function () {
+    return {
+        restrict: 'E',
+        replace: true,
+        templateUrl: "view/footer.html"
+
+    }
 });
 
 
@@ -159,7 +191,6 @@ app.service('showListService', function ($http) {
         });
     }
 });
-
 
 
 /*
