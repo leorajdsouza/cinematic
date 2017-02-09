@@ -1,4 +1,4 @@
-# Cinematic App
+# CinematicApp
 A simplified torrent search app to browse and download tv shows. Allows you to download eztv uploaded torrents .
 
 #Search
