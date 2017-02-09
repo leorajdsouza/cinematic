@@ -131,7 +131,7 @@ font-family: 'Work Sans', sans-serif;
  .torrent-bar{
    background: #000; 
    color: #1db954;
-   min-width:  100px !important;
+   min-width:  50px !important;
  }
 
  
@@ -164,7 +164,7 @@ font-family: 'Work Sans', sans-serif;
     touch-action: manipulation;
     background-image: none;
     border: 0;
-    border-radius: 500px;
+    /*border-radius: 500px;*/
     padding: 13px;
     -webkit-transition: all .15s ease;
     transition: all .15s ease;
@@ -205,8 +205,11 @@ font-family: 'Work Sans', sans-serif;
     text-align: center;
   }
    .episode .btn-group{
-  margin-left: 10px !important;
-}
+      margin-left: 10px !important;
+   }
+    .btn{
+      border-radius: 0px;
+    }
 }
  
  .episode .btn-group{

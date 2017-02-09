@@ -1,5 +1,14 @@
 
-var appConfig = { 
+/*
+To do
+------
+-move the codes to repective place
+
+
+*/
+
+
+var appConfig = {
     endPoint: "https://api-fetch.website/tv/"
 };
 
@@ -11,7 +20,7 @@ var app = angular.module('tvApp', ['ngRoute']);
 app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $location, $window) {
     $rootScope.isLoading = true;
     $scope.page_no = 1;
-    $scope.search = ""; 
+    $scope.search = "";
 
     /*
     Load show total count for Navigation
@@ -34,7 +43,7 @@ app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $loca
         $rootScope.isLoading = false;
     }
 
-    $scope.loadMore = function (data) { 
+    $scope.loadMore = function (data) {
         $scope.shows = $scope.shows.concat(data);
         console.log($scope.shows);
         $rootScope.isLoading = false;
@@ -66,7 +75,7 @@ app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $loca
 /*
     Single show info
 */
-app.controller('tvshow', function ($scope, showListService, $routeParams, $rootScope) {
+app.controller('showsDetailsCtrl', function ($scope, showListService, $routeParams, $rootScope) {
     $rootScope.isLoading = true;
     $scope.episodes = [];
     $scope.showCallback = function (data) {
@@ -76,6 +85,8 @@ app.controller('tvshow', function ($scope, showListService, $routeParams, $rootS
         $scope.seasonDups();
         $rootScope.isLoading = false;
     }
+
+    /*Remove duplicate season values*/
     $scope.seasonDups = function () {
         $scope.seasonCount = [];
         for (var i = 0; i < $scope.episodes.length; i++) {
@@ -83,10 +94,10 @@ app.controller('tvshow', function ($scope, showListService, $routeParams, $rootS
                 $scope.seasonCount.push($scope.episodes[i].season);
             }
         }
- 
+        $scope.seasonCount = $scope.seasonCount.sort().reverse();    
+        $scope.selectedSeason = $scope.seasonCount[0].toString();        
     }
 
- 
     showListService.getShow($scope.showCallback, $routeParams.show_id);
     $scope.UnquieShowID = function (id) {
         return true;
@@ -94,6 +105,8 @@ app.controller('tvshow', function ($scope, showListService, $routeParams, $rootS
 
     $scope.openTorrent = function (magnet) {
         window.location.replace(magnet);
+        /* send toast notification to user */
+        // code goes here 
     }
 });
 
@@ -106,12 +119,14 @@ app.config(function ($routeProvider) {
         controller: "tvAppCtrl"
     }).when("/shows/:show_id", {
         templateUrl: "view/showInfo.html",
-        controller: "tvshow"
+        controller: "showsDetailsCtrl"
     }).when("/search", {
         templateUrl: "view/searchResults.html",
-        //controller: "tvAppCtrl"
+        controller: "tvAppCtrl"
     });
 });
+
+
 
 /*
     Service to load shows list
