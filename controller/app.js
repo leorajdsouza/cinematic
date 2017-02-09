@@ -11,20 +11,7 @@ var app = angular.module('tvApp', ['ngRoute']);
 app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $location, $window) {
     $rootScope.isLoading = true;
     $scope.page_no = 1;
-    $scope.search = "";
-
-    /* Detect end of page*/
-
-    // angular.element($window).bind("scroll", function () {
-    //     var windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
-    //     var body = document.body, html = document.documentElement;
-    //     var docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-    //     windowBottom = windowHeight + window.pageYOffset;
-
-    //     if (windowBottom >= docHeight) {
-    //         console.log("load now");
-    //     }
-    // });
+    $scope.search = ""; 
 
     /*
     Load show total count for Navigation
@@ -47,11 +34,7 @@ app.controller('tvAppCtrl', function ($scope, showListService, $rootScope, $loca
         $rootScope.isLoading = false;
     }
 
-    $scope.loadMore = function (data) {
-        //   window.scrollTo(0, 0);
-
-        //$scope.shows.push(data);
-
+    $scope.loadMore = function (data) { 
         $scope.shows = $scope.shows.concat(data);
         console.log($scope.shows);
         $rootScope.isLoading = false;
@@ -100,13 +83,10 @@ app.controller('tvshow', function ($scope, showListService, $routeParams, $rootS
                 $scope.seasonCount.push($scope.episodes[i].season);
             }
         }
-
-        //         $scope.selectedSeason = $scope.seasonCount[seasonCount.length-1].value;
+ 
     }
 
-
-    //ng-init="selectedSeason=seasonCount[seasonCount.length-1]"
-
+ 
     showListService.getShow($scope.showCallback, $routeParams.show_id);
     $scope.UnquieShowID = function (id) {
         return true;
