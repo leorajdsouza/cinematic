@@ -5,7 +5,7 @@ To do
 -move the codes to repective place 
 - impliment requires js as it get complex
 -dont not remove any comment as comment contains features information
-
+-- impliment state routing
 */
 
 
@@ -89,8 +89,14 @@ app.controller('showsDetailsCtrl', function ($scope, showListService, $routePara
                 $scope.seasonCount.push($scope.episodes[i].season);
             }
         }
-        $scope.seasonCount = $scope.seasonCount.sort().reverse();
+        $scope.seasonCount = $scope.seasonCount.sort(compareNumbers).reverse();
+        console.log($scope.seasonCount);
         $scope.selectedSeason = $scope.seasonCount[0].toString();
+    }
+
+
+    function compareNumbers(a, b) {
+        return a - b;
     }
 
     showListService.getShow($scope.showCallback, $routeParams.show_id);
@@ -180,9 +186,10 @@ app.service('showListService', function ($http) {
         });
     }
     this.getShow = function (callback, show_id) {
-        $http.get(appConfig.endPoint + '/show/' + show_id).then(function (response) {
-            callback(response.data);
-        });
+        $http.get(appConfig.endPoint + '/show/' + show_id,
+            { headers: { 'Cache-Control': 'no-cache' } }).then(function (response) {
+                callback(response.data);
+            });
     }
     this.showCount = function (callback) {
         $http.get(appConfig.endPoint + '/shows/').then(function (response) {
