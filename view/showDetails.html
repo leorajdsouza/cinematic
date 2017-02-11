@@ -42,7 +42,8 @@
                                                 <!-- shows list -->
                                                 <div ng-repeat="seasons in showDataMore.episodes | filter:{'season':selectedSeason} | orderBy:'episode':true">
                                                         <div class="episode">
-                                                                <span class="sub-title"> Episode {{seasons.episode}} :</span>                                                                <i> {{seasons.title}}</i>
+                                                                <span class="sub-title"> Episode {{seasons.episode}} :</span>                                                                
+                                                                <i> {{seasons.title}} </i> <span class="sub-title"> - {{seasons.first_aired * 1000 | date:'dd MMM yyyy'}}</span>
                                                                 <br>
                                                                 <!--Future implimention of details of earch episodes-->
                                                                 <!--<p> <i class="sub-title">Overview :</i> {{seasons.overview}}</p>-->

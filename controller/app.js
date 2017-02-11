@@ -306,8 +306,8 @@ app.service('showListService', function ($http) {
         });
     }
     this.getShow = function (callback, show_id) {
-        $http.get(appConfig.endPoint + '/show/' + show_id,
-            { headers: { 'Cache-Control': 'no-cache' } }).then(function (response) {
+        $http.get(appConfig.endPoint + '/show/' + show_id +"&"+Math.random()
+            ).then(function (response) {
                 callback(response.data);
             });
     }
