@@ -10,23 +10,21 @@ app.controller('showsDetailsCtrl', function ($scope, showListService, $routePara
         $scope.showDataMore = data;
         $scope.episodes = $scope.showDataMore.episodes;
         $scope.seasonDups();
-        $rootScope.isLoading = false;
-        //console.log($scope.episodes);
+        $rootScope.isLoading = false; 
         $scope.followShows = [];
         $scope.isFollow = false;
-        for (var i = 0; i < $rootScope.followData.length; i++) {
-            console.log($rootScope.followData.item(i));
-            $scope.followShows.push($rootScope.followData.item(i));
-            if (!$scope.isFollow) {
-                if ($rootScope.followData.item(i).tvdb_id == $scope.showDataMore.tvdb_id) {
-                    $scope.isFollow = true;
-                }
-            }
-        }
 
-
-    }
-
+        //for db row to ng repeat
+        // for (var i = 0; i < $rootScope.followData.length; i++) {
+        //     console.log($rootScope.followData.item(i));
+        //     $scope.followShows.push($rootScope.followData.item(i));
+        //     // if (!$scope.isFollow) {
+        //     //     if ($rootScope.followData.item(i).tvdb_id == $scope.showDataMore.tvdb_id) {
+        //     //         $scope.isFollow = true;
+        //     //     }
+        //     // }
+        // }
+    } 
 
     /*Remove duplicate season values*/
     $scope.seasonDups = function () {
@@ -63,8 +61,8 @@ app.controller('showsDetailsCtrl', function ($scope, showListService, $routePara
             tvdb_id: tvdb_id,
             following: !follow
         }
-        
-        dbQuery.insert(data);
+
+       // dbQuery.insert(data);
 
     }
 

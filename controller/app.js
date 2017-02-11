@@ -2,10 +2,10 @@
 /*
 To do
 ------
--move the codes to repective place 
+- move the codes to repective place 
 - impliment requires js as it get complex
--dont not remove any comment as comment contains features information
--- impliment state routing
+- dont not remove any comment as comment contains features information
+- impliment state routing
 */
 
  
@@ -31,7 +31,11 @@ app.constant('DB_CONFIG', {
         });
         init.finish();
     });
-}).run(function ($rootScope, $SQLite) {
+});
+
+
+
+/*.run(function ($rootScope, $SQLite) {
     var query = "SELECT id,tvdb_id,following FROM follow WHERE following = 1";
     $SQLite.ready(function () {
         $SQLite.selectFirst(query, []).then(
@@ -56,3 +60,4 @@ app.constant('DB_CONFIG', {
 
     });
 });
+*/
