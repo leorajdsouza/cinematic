@@ -5,15 +5,7 @@ app.controller('listShows', function ($scope, showListService, $rootScope, $loca
     $rootScope.isLoading = true;
     $scope.page_no = 1;
     $scope.search = "";
-
-    /*
-    Load show total count for Navigation
-    */
-    $scope.showCountCallback = function (data) {
-        $scope.showCount = data;
-    }
-    $scope.showCount = showListService.showCount($scope.showCountCallback);
-
+ 
     /* Get tv shows */
     $scope.showsCallback = function (data) {
         //  console.log(data);

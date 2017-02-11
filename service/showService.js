@@ -13,16 +13,12 @@ app.service('showListService', function ($http) {
         });
     }
     this.getShow = function (callback, show_id) {
-        $http.get(appConfig.endPoint + '/show/' + show_id +"?"+Math.random(1,1000)
-            ).then(function (response) {
-                callback(response.data);
-            });
-    }
-    this.showCount = function (callback) {
-        $http.get(appConfig.endPoint + '/shows/').then(function (response) {
+        $http.get(appConfig.endPoint + '/show/' + show_id + "?" + Math.random(1, 1000)
+        ).then(function (response) {
             callback(response.data);
         });
     }
+
     this.searchShow = function (callback, search) {
         $http.get(appConfig.endPoint + '/shows/1?keywords=' + search).then(function (response) {
             callback(response.data);
