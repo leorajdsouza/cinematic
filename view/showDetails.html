@@ -2,8 +2,6 @@
 -circle rating for show - from total user
 - trailer video to show
 -->
-
-
 <div class="container" ng-hide="isLoading">
         <div class="row">
                 <div class="container-fluid">
@@ -12,11 +10,11 @@
                                         <div class="row">
                                                 <img class="detail-img" ng-src="{{showDataMore.images.poster}}" height="300" width="200" />
                                         </div>
-                                        <div class="row show-mr-title"> {{showDataMore.title}}</div>
-                                        <div class="row"><b>Year:</b> {{showDataMore.year}} </div>
-                                        <div class="row">Rating: <b class="sub-title">{{showDataMore.rating.percentage | number:2}}%</b></div>
- 
-                                        <p class="show-box-title-subclr"> <button ng-click="follow(showDataMore._id,showDataMore.tvdb_id,isFollow)" class="btn btn-green center-me">{{isFollow === true?"Unfollow":"Follow"}}</button>
+                                        <div class="row show-mr-title"> {{showDataMore.title}} </div>
+                                        <div class="row"><span class="show-sub-title"> {{showDataMore.year}}</span></div> 
+                                        <div class="row"> <i class="glyphicon glyphicon-heart heart"></i> <b class="sub-title">{{showDataMore.rating.percentage | number:0}}%</b></div>
+                                       <div class="row"> <p class="show-box-title-subclr" ng-if="isFollow">FOLLOWING</p> </div>
+                                                <!--<p class="show-box-title-subclr"> <button ng-click="follow(showDataMore._id,showDataMore.tvdb_id,isFollow)" class="btn btn-green center-me">{{isFollow === true?"Unfollow":"Follow"}}</button>-->
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-9 txt-color">
                                         <div class="row">
@@ -30,7 +28,6 @@
                                                  {{genre}}<span ng-show="!$last">, </span>
                                                          </i>
                                                 </div>
-
                                                 <span class="row">
                                                 <span class="sub-title">Number of seasons: </span>
                                                 <b>{{showDataMore.num_seasons}}</b> <i> ({{showDataMore.status}})</i>
@@ -42,7 +39,7 @@
                                                 <!-- shows list -->
                                                 <div ng-repeat="seasons in showDataMore.episodes | filter:{'season':selectedSeason} | orderBy:'episode':true">
                                                         <div class="episode">
-                                                                <span class="sub-title"> Episode {{seasons.episode}} :</span>                                                                
+                                                                <span class="sub-title"> Episode {{seasons.episode}} :</span>
                                                                 <i> {{seasons.title}} </i> <span class="sub-title"> - {{seasons.first_aired * 1000 | date:'dd MMM yyyy'}}</span>
                                                                 <br>
                                                                 <!--Future implimention of details of earch episodes-->

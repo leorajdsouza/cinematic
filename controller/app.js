@@ -1,4 +1,3 @@
-
 /*
 To do
 ------
@@ -8,56 +7,65 @@ To do
 - impliment state routing
 */
 
- 
-var app = angular.module('cinematicApp', ['ngRoute', 'ngSQLite']);
 
-app.constant('DB_CONFIG', {
-    follow: {
-        id: { type: 'integer' },
-        tvdb_id: { type: 'integer' },
-        following: { type: 'boolean' }
+var app = angular.module('cinematicApp', ['ngRoute']);
+var db;
+// app.constant('DB_CONFIG', {
+//     shows: {
+//         id: { type: 'integer' },
+//         tvdb_id: { type: 'integer' },
+//         following: { type: 'boolean' }
+//     }
+//   })
+app.run(function (TraktTVv2,$rootScope) { 
+
+    TraktTVv2.getUserWatchlist("bux420",WatchedCallback);
+    var watchlist =[];
+    function WatchedCallback(data) { 
+        angular.forEach(data,function(value,key){ 
+            watchlist.push(value.show.ids);
+        },watchlist);
+        $rootScope.watchlist = watchlist; 
+        
     }
-}).run(function ($SQLite) {
-    $SQLite.dbConfig({
-        name: 'cinematic-db',
-        description: 'cinematic database to store tv shows',
-        version: '1.0'
-    });
-}).run(function ($SQLite, DB_CONFIG) {
-    $SQLite.init(function (init) {
-        angular.forEach(DB_CONFIG, function (config, name) {
-            init.step();
-            $SQLite.createTable(name, config).then(init.done);
-        });
-        init.finish();
-    });
+
 });
+             
+            // }).run(function ($SQLite, DB_CONFIG) {
+            //     $SQLite.init(function (init) {
+            //         angular.forEach(DB_CONFIG, function (config, name) {
+            //             init.step();
+            //             $SQLite.createTable(name, config).then(init.done);
+            //         });
+            //         init.finish();
+            //     });
+            // });
 
 
 
-/*.run(function ($rootScope, $SQLite) {
-    var query = "SELECT id,tvdb_id,following FROM follow WHERE following = 1";
-    $SQLite.ready(function () {
-        $SQLite.selectFirst(query, []).then(
-            //no results 
-            function () {
-                //   deferred.resolve({ status: false });
-                //  return deferred.promise;
-            },
-            //if error
-            function (error) {
-                //   deferred.reject({ status: false })
-            },
-            //contains data
-            function (data) {
-                $rootScope.followData = data.result.rows;
-                // console.log($rootScope.followData);
-                //  deferred.resolve({ status: false, results: data });
-                // return deferred.promise;
-            }
-        )
-        //  });
+            /*.run(function ($rootScope, $SQLite) {
+                var query = "SELECT id,tvdb_id,following FROM follow WHERE following = 1";
+                $SQLite.ready(function () {
+                    $SQLite.selectFirst(query, []).then(
+                        //no results 
+                        function () {
+                            //   deferred.resolve({ status: false });
+                            //  return deferred.promise;
+                        },
+                        //if error
+                        function (error) {
+                            //   deferred.reject({ status: false })
+                        },
+                        //contains data
+                        function (data) {
+                            $rootScope.followData = data.result.rows;
+                            // console.log($rootScope.followData);
+                            //  deferred.resolve({ status: false, results: data });
+                            // return deferred.promise;
+                        }
+                    )
+                    //  });
 
-    });
-});
-*/
+                });
+            });
+            */

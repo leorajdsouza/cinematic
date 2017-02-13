@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css?family=Work+Sans');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
  @import url('https://fonts.googleapis.com/css?family=Rubik');
  body {
    font-family: 'Work Sans', sans-serif;
@@ -226,6 +226,9 @@
  .detail-img {
    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
  }
+  .txt-center {
+     text-align: center;
+   }
  
  @media screen and (max-width:700px) {
    .txt-center {
@@ -283,104 +286,106 @@
  .padB15 {
    padding-bottom: 7px;
  }
- /* end new design*/
- /*img{
+ 
+ .heart {
+   color: #ed1c24;
+   font-size: 20px;
+   position: relative;
+   top: 5px;
+}
+
+.show-sub-title{
+  color: #999999;
+  font-size: 20px;
+}
+
+/* end new design*/
+
+/*img{
 border-radius: 10px;
 }*/
- 
- .spinner {
-   font-size: 50px !important;
-   color: #1db954;
-   position: absolute;
-   top: 50%;
-   left: 50%;
- }
- 
- .overlay {
-   background: #16171B;
-   position: fixed;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   opacity: 0.7;
-   z-index: 20;
- }
- 
- .show-mr-title {
-   color: #fff;
-   font-weight: bold;
-   text-transform: uppercase;
-   font-size: 30px;
-   -webkit-font-smoothing: antialiased;
- }
- 
- .sub-title {
-   color: #1db954;
- }
- 
- .txt-color {
-   color: #fff;
- }
- 
- .episode {
-   padding-top: 10px;
- }
- 
- .tr-grn {
-   color: #1db954;
-   font-size: 10px;
- }
- 
- .poster-shadow {
-   position: absolute;
-   background: #000;
-   width: 100px;
-   height: 20px;
-   display: block;
-   margin: auto;
-   bottom: 40px;
-   right: 98px;
-   color: #fff;
-   border-radius: 0px 0px 10px 10px;
- }
- 
- .searchBar {
-   margin-top: 8px;
- }
- 
- .searchBar .glyphicon {
-   top: 0px;
- }
- 
- .glyphicon-spin {
-   -webkit-animation: spin 1000ms infinite linear;
-   animation: spin 1000ms infinite linear;
- }
- 
- @-webkit-keyframes spin {
-   0% {
-     -webkit-transform: rotate(0deg);
-     transform: rotate(0deg);
-   }
-   100% {
-     -webkit-transform: rotate(359deg);
-     transform: rotate(359deg);
-   }
- }
- 
- @keyframes spin {
-   0% {
-     -webkit-transform: rotate(0deg);
-     transform: rotate(0deg);
-   }
-   100% {
-     -webkit-transform: rotate(359deg);
-     transform: rotate(359deg);
-   }
- }
- 
- .searchBar {
-   margin-left: 20px;
-   margin-right: 20px;
- }
+.spinner {
+  font-size: 50px !important;
+  color: #1db954;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.overlay {
+  background: #16171B;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.7;
+  z-index: 20;
+}
+.show-mr-title {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 30px;
+  -webkit-font-smoothing: antialiased;
+}
+.sub-title {
+  color: #1db954;
+}
+.txt-color {
+  color: #fff;
+}
+.episode {
+  padding-top: 10px;
+}
+.tr-grn {
+  color: #1db954;
+  font-size: 10px;
+}
+.poster-shadow {
+  position: absolute;
+  background: #000;
+  width: 100px;
+  height: 20px;
+  display: block;
+  margin: auto;
+  bottom: 40px;
+  right: 98px;
+  color: #fff;
+  border-radius: 0px 0px 10px 10px;
+}
+.searchBar {
+  margin-top: 8px;
+}
+.searchBar .glyphicon {
+  top: 0px;
+}
+.glyphicon-spin {
+  -webkit-animation: spin 1000ms infinite linear;
+  animation: spin 1000ms infinite linear;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+.searchBar {
+  margin-left: 20px;
+  margin-right: 20px;
+}

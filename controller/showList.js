@@ -1,17 +1,19 @@
-
 /*   Show list controller  */
 app.controller('listShows', function ($scope, showListService, $rootScope, $location, $window) {
+
 
     $rootScope.isLoading = true;
     $scope.page_no = 1;
     $scope.search = "";
- 
+
     /* Get tv shows */
     $scope.showsCallback = function (data) {
-        //  console.log(data);
-        if (!data.length <= 0) {
+        if (!data.length == 0) {
             $scope.shows = [];
             $scope.shows = data;
+            // console.log(typeof JSON.parse(data));
+            //showDB.insertToDb(JSON.stringify(data));  
+
         } else {
             alert("Shows not available")
         }
@@ -34,4 +36,3 @@ app.controller('listShows', function ($scope, showListService, $rootScope, $loca
     }
 
 });
-
