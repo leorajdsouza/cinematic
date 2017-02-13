@@ -32,7 +32,11 @@
    border: none;
    background: #16171B;
  }
- 
+
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+   background-color: #16171B;
+}
  .show-display-box {
    background: #191A1F;
    margin-bottom: 15px;
