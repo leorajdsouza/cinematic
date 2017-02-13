@@ -2,8 +2,9 @@
  @import url('https://fonts.googleapis.com/css?family=Rubik');
  body {
    font-family: 'Work Sans', sans-serif;
-   background: #16171B
+   background: #16171B; 
  }
+ 
  
  * {
    -webkit-font-smoothing: antialiased;
@@ -298,6 +299,19 @@
   color: #999999;
   font-size: 20px;
 }
+
+
+.watchlist{
+  margin-bottom: 15px;
+}
+
+.watchlist-title{
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
 
 /* end new design*/
 

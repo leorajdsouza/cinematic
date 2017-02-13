@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="container-fluid">
+            <div class="row show-details txt-center">
+                      <div class="watchlist-title">Your shows</div>
+                <div class="col-xs-6 col-sm-3 col-md-2 show-title watchlist" ng-repeat="myShows in watchlist">
+                    <!--<div class="clearfix visible-xs"></di   v>-->
+                    <a href="#shows/{{myShows.imdb}}">
+                        <div>
+                            <span> <img  ng-src="http://thetvdb.com/banners/_cache/posters/{{myShows.tvdb}}-1.jpg" height="150 " width="100px "></span>
+                            <span class="show-box-title">
+                                <!--<p class="show-name padB15">{{myShows.slug}}</p> -->
+                                <!--<p class="show-box-title-clr">First episode year: <span class="show-box-title-subclr"> {{myShows.year}} </span></p>-->
+                            <!--<p class="show-box-title-clr">Seasons: <span class="show-box-title-subclr"> {{myShows.num_seasons}}</span></p>-->
+                            <!--<i class="glyphicon glyphicon-fire following"> </i> -->
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -17,24 +17,28 @@ var db;
 //         following: { type: 'boolean' }
 //     }
 //   })
-app.run(function (TraktTVv2,$rootScope) { 
+app.run(function (TraktTVv2, $rootScope) {
 
-    TraktTVv2.getUserWatchlist("bux420",WatchedCallback);
-    var watchlist =[];
-    function WatchedCallback(data) { 
-        angular.forEach(data,function(value,key){ 
+
+    //offline data
+    var wachlistOffline = [{ "trakt": 1409, "slug": "the-big-bang-theory", "tvdb": 80379, "imdb": "tt0898266", "tmdb": 1418, "tvrage": 8511 }, { "trakt": 1403, "slug": "arrow", "tvdb": 257655, "imdb": "tt2193021", "tmdb": 1412, "tvrage": 30715 }, { "trakt": 1394, "slug": "marvel-s-agents-of-s-h-i-e-l-d", "tvdb": 263365, "imdb": "tt2364582", "tmdb": 1403, "tvrage": 32656 }, { "trakt": 1393, "slug": "the-walking-dead", "tvdb": 153021, "imdb": "tt1520211", "tmdb": 1402, "tvrage": 25056 }, { "trakt": 60300, "slug": "the-flash-2014", "tvdb": 279121, "imdb": "tt3107288", "tmdb": 60735, "tvrage": 36939 }, { "trakt": 1390, "slug": "game-of-thrones", "tvdb": 121361, "imdb": "tt0944947", "tmdb": 1399, "tvrage": 24493 }, { "trakt": 1611, "slug": "supernatural", "tvdb": 78901, "imdb": "tt0460681", "tmdb": 1622, "tvrage": 5410 }, { "trakt": 19792, "slug": "sherlock", "tvdb": 176941, "imdb": "tt1475582", "tmdb": 19885, "tvrage": 23433 }]
+
+
+    //TraktTVv2.getUserWatchlist("bux420", WatchedCallback);
+    var watchlist = [];
+    function WatchedCallback(data) {
+        angular.forEach(data, function (value, key) {
             watchlist.push(value.show.ids);
-        },watchlist);
-        $rootScope.watchlist = watchlist; 
-      //  console.log(JSON.stringify(watchlist));
+        }, watchlist);
 
-      //offline data
-     wachlistOffline = [{"trakt":1409,"slug":"the-big-bang-theory","tvdb":80379,"imdb":"tt0898266","tmdb":1418,"tvrage":8511},{"trakt":1403,"slug":"arrow","tvdb":257655,"imdb":"tt2193021","tmdb":1412,"tvrage":30715},{"trakt":1394,"slug":"marvel-s-agents-of-s-h-i-e-l-d","tvdb":263365,"imdb":"tt2364582","tmdb":1403,"tvrage":32656},{"trakt":1393,"slug":"the-walking-dead","tvdb":153021,"imdb":"tt1520211","tmdb":1402,"tvrage":25056},{"trakt":60300,"slug":"the-flash-2014","tvdb":279121,"imdb":"tt3107288","tmdb":60735,"tvrage":36939},{"trakt":1390,"slug":"game-of-thrones","tvdb":121361,"imdb":"tt0944947","tmdb":1399,"tvrage":24493},{"trakt":1611,"slug":"supernatural","tvdb":78901,"imdb":"tt0460681","tmdb":1622,"tvrage":5410},{"trakt":19792,"slug":"sherlock","tvdb":176941,"imdb":"tt1475582","tmdb":19885,"tvrage":23433}]
+        //$rootScope.watchlist = watchlist;
+     
+        //  console.log(JSON.stringify(watchlist));
     }
-
+      $rootScope.watchlist = wachlistOffline;
 
 });
-             
+
             // }).run(function ($SQLite, DB_CONFIG) {
             //     $SQLite.init(function (init) {
             //         angular.forEach(DB_CONFIG, function (config, name) {

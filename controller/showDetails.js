@@ -11,12 +11,14 @@ app.controller('showsDetailsCtrl', function ($scope, showListService, $routePara
         $scope.seasonDups();
         $rootScope.isLoading = false;
         // $scope.followShows = [];
-        $scope.isFollow = false;
- 
+
+        $scope.isFollow = false; 
+  
         for (var i = 0; i < $rootScope.watchlist.length; i++) { 
             if (!$scope.isFollow) { 
                 if ($rootScope.watchlist[i].tvdb == $scope.showDataMore.tvdb_id) { 
                     $scope.isFollow = true;
+                    break
                 }
             }
         } 

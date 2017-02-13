@@ -12,6 +12,8 @@ app.config(function ($routeProvider) {
     }).when("/search", {
         templateUrl: "view/searchResults.html",
         controller: "showSearchCtrl"
+    }).when("/watchlist", {
+        templateUrl: "view/watchlist.html",
+        controller: "watchlistCtrl"
     });
 });
- 

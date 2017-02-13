@@ -16,4 +16,6 @@ app.controller('showSearchCtrl', function ($scope, showListService, $rootScope, 
     $scope.searchCallback = function (data) {
         $scope.searchResults = data;
     }
+
+    //console.log($location.url());
 });
