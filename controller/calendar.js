@@ -31,11 +31,11 @@ app.controller('calendarCtrl', function ($scope, $rootScope) {
             $scope.thisweek.push(date);
     }
 
-    var count = 0;
-    for (var i = 0; i < $scope.thisweek.length; i++) {
-        console.log($scope.thisweek[i]);
-        var showdate = new Date($rootScope.Showcalendar[j].first_aired);
-    }
+    // var count = 0;
+    // for (var i = 0; i < $scope.thisweek.length; i++) {
+    //     console.log($scope.thisweek[i]);
+    //     var showdate = new Date($rootScope.Showcalendar[count].first_aired);
+    // }
 
     console.log($scope.calendars);
     $scope.shows = $rootScope.Showcalendar;
