@@ -13,9 +13,9 @@ app.factory('TraktTVv2', ["$q", "$http",
 
         var service = {
             /* what user is following*/
-            getUserWatchlist: function (user,WatchedCallback) {
+            getUserWatchlist: function (user, WatchedCallback) {
                 var watchlist = "users/" + user + "/watchlist/shows";
-                
+
                 $http.get(endpoint + watchlist, {
                     headers: {
                         'trakt-api-key': APIkey,
@@ -24,12 +24,37 @@ app.factory('TraktTVv2', ["$q", "$http",
                         'Accept': 'application/json'
                     }
                 }).then(function (result) {
-                  WatchedCallback(result.data);
+                    WatchedCallback(result.data);
                 }, function (err) {
-                   WatchedCallback(err);
+                    WatchedCallback(err);
                 });
+            },
+
+            getShowCalendar: function (date) {
+               
+                //get sunday date and send
+                var calendar = "calendars/all/shows/";
+                //var date = 2017-02-01;
+                var duration = 7;
+
+                $http.get(endpoint + calendar+date+"/"+duration, {
+                    headers: {
+                        'trakt-api-key': APIkey,
+                        'trakt-api-version': 2,
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                }).then(function (result) {
+                    console.log(result.data);
+                    //WatchedCallback(result.data);
+                }, function (err) {
+                    //WatchedCallback(err);
+                });
+
             }
+
         };
+
         return service;
     }
 ]);
