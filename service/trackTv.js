@@ -31,46 +31,38 @@ app.factory('TraktTVv2', ["$q", "$http",
             },
 
             //https://api.trakt.tv/calendars/all/shows/2017-02-12/7?languages=en&status=returning%20series&countries=us
-            getShowCalendar: function (date, callback) {
-                //  console.log(calendar);
-
-                // for (var i = 0; i < wachlistOffline.length; i++) {
-                //     console.log(wachlistOffline[i].imdb);
-                // }
-                var imdbId = [];
-                angular.forEach(wachlistOffline, function (value, key) {
-                    imdbId.push(value.imdb);
-                }, imdbId);
-                //   console.log(imdbId);
-
-                calendarData = [];
-                for (var i = 0; i < calendar.length; i++) {
-                    if (imdbId.indexOf(calendar[i].show.ids.imdb) != -1) {
-                        calendarData.push(calendar[i]);
-                    }
-                    //console.log(calendar[i].show.ids.imdb);
-                }
-
-                callback(calendarData);
+            getShowCalendar: function (userShows, callback) {
 
                 // //get sunday date and send
-                // var calendar = "calendars/all/shows/";
-                // //var date = 2017-02-01;
-                // var duration = 7;
+                var calendar = "calendars/all/shows/2017-02-12/7?languages=en&status=returning%20series&countries=us";
+                //var date = 2017-02-01;
+                var duration = 7;
 
-                // $http.get(endpoint + calendar+date+"/"+duration, {
-                //     headers: {
-                //         'trakt-api-key': APIkey,
-                //         'trakt-api-version': 2,
-                //         'Content-Type': 'application/json',
-                //         'Accept': 'application/json'
-                //     }
-                // }).then(function (result) {
-                //     console.log(result.data);
-                //     //WatchedCallback(result.data);
-                // }, function (err) {
-                //     //WatchedCallback(err);
-                // });
+                $http.get(endpoint + calendar, {
+                    headers: {
+                        'trakt-api-key': APIkey,
+                        'trakt-api-version': 2,
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                }).then(function (result) { 
+                    var imdbId = [];
+                    angular.forEach(userShows, function (value, key) {
+                        imdbId.push(value.imdb);
+                    }, imdbId); 
+
+                    calendarData = [];
+                    for (var i = 0; i < result.data.length; i++) { 
+                        if (imdbId.indexOf(result.data[i].show.ids.imdb) != -1) {
+                            calendarData.push(result.data[i]);
+                            
+                        }
+                    } 
+                    callback(calendarData);
+
+                }, function (err) {
+                    //WatchedCallback(err);
+                });
 
 
             }
