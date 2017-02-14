@@ -11,9 +11,10 @@
                     <!--<p> {{weeks[$index]}}</p>-->
                     <div ng-repeat="calendar in calendars">
                         <div ng-if="calendar.date == week.getDate()">
-                            <p class="weekTitle"> {{week | date:"EEEE" }} </p>
-                            <a href="#shows/{{calendar.show.ids.imdb}}"> {{calendar.show.title}} ({{calendar.show.year}}) </a>
-                            <br> Season {{calendar.episode.season}} Episode{{calendar.episode.number}} <br> <br>
+                            <p class="calendar-date">  <span class="calendar-day">{{week | date:"d" }}</span> {{week | date:"EEEE" }}</p>
+                            <span> <img  ng-src="http://thetvdb.com/banners/_cache/posters/{{calendar.show.ids.tvdb}}-1.jpg" height="300" width="200px "></span>
+                            <!--<a href="#shows/{{calendar.show.ids.imdb}}"> {{calendar.show.title}} ({{calendar.show.year}}) </a>-->
+                            <br> {{calendar.episode.season}}X{{calendar.episode.number}} {{calendar.episode.title}} <br> <br>
                         </div>
 
                     </div>

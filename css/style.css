@@ -306,7 +306,8 @@
 
 
 .watchlist{
-  margin-bottom: 15px;
+  border-bottom: solid 1px #2d2d2d;
+    border-right: solid 1px #2d2d2d;
 }
 
 .watchlist-title{
@@ -333,6 +334,17 @@
 .calendarImg{
 margin: 10px;
 } 
+.calendar-date{
+  background: #2a2a2a;
+    padding: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+.calendar-day{
+  font-size: 28px;
+  font-weight: bold;
+}
+
 
 /* end new design*/
 
