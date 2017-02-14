@@ -1,0 +1,24 @@
+<div class="container calendar">
+    <div class="row">
+        <div class="container-fluid">
+            <div class="row">
+                <!--<div ng-repeat="week in weeks">-->
+                <!--<div class="weekTitle"> {{week}} </div>-->
+                <!--<div ng-repeat="show in shows">
+                    {{ show.show.title }} - {{ show.first_aired | date:"dd" }} {{thisweek[$index].getDate()}}                    
+                </div>-->
+                <div ng-repeat="week in thisweek">
+                    <!--<p> {{weeks[$index]}}</p>-->
+                    <div ng-repeat="calendar in calendars">
+                        <div ng-if="calendar.date == week.getDate()">
+                            <p class="weekTitle"> {{week | date:"EEEE" }} </p>
+                            <a href="#shows/{{calendar.show.ids.imdb}}"> {{calendar.show.title}} ({{calendar.show.year}}) </a>
+                            <br> Season {{calendar.episode.season}} Episode{{calendar.episode.number}} <br> <br>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -317,6 +317,23 @@
 }
 
 
+.calendar{
+  color:#fff; 
+}
+
+.weekTitle{
+   color: #1db954;
+   font-size: 20px;     
+}
+
+.bottom-margin{
+  margin: 50px;
+}
+ 
+.calendarImg{
+margin: 10px;
+} 
+
 /* end new design*/
 
 /*img{

@@ -15,5 +15,8 @@ app.config(function ($routeProvider) {
     }).when("/watchlist", {
         templateUrl: "view/watchlist.html",
         controller: "watchlistCtrl"
+    }).when("/calendar", {
+        templateUrl: "view/calendar.html",
+        controller: "calendarCtrl"
     });
 });
