@@ -5,11 +5,10 @@ Week calendar displays show in current week. watchlist displays list you follow.
 
  
 
-#Technologies 
-  Angular.js,
-  html 5,
-  Bootstrap
-
+###Tech
+* [AngularJS] - HTML enhanced for web apps!
+* [Visual Studio Code] - awesome web-based text editor 
+* [Twitter Bootstrap] - great UI boilerplate for modern web apps 
 
 #Road Map
 --------
