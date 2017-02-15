@@ -6,38 +6,28 @@ app.controller('calendarCtrl', function ($scope, $rootScope) {
     var curr = new Date;
     var firstday = new Date(curr.setDate(curr.getDate() - curr.getDay()));
 
-    //  console.log(firstday);
+    $scope.today = new Date();
 
     var date = new Date(firstday);
     var day = date.getDay();
 
-    $scope.calendars = []
     $scope.thisweek = []
     for (var i = 0; i < 7; i++) {
         if (i - day != 0) {
             var days = i - day;
             var newDate = new Date(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            //if(newDate.getDate() == )
-            for (var j = 0; j < $rootScope.Showcalendar.length; j++) {
-                var showdate = new Date($rootScope.Showcalendar[j].first_aired);
-                if (newDate.getDate() == showdate.getDate()) {
-                    $rootScope.Showcalendar[j].date = newDate.getDate();
-                    $scope.calendars.push($rootScope.Showcalendar[j]);
-                }
-            }
             $scope.thisweek.push(newDate);
-        }
-        else
+        } else
             $scope.thisweek.push(date);
     }
 
-    // var count = 0;
-    // for (var i = 0; i < $scope.thisweek.length; i++) {
-    //     console.log($scope.thisweek[i]);
-    //     var showdate = new Date($rootScope.Showcalendar[count].first_aired);
-    // }
-
-    console.log($scope.calendars);
+    $scope.calendars = $rootScope.Showcalendar;
+    $scope.getdate = function (date) {
+        var newdate = new Date(date);
+        console.log(date);
+        return newdate.getDate();
+    }
+ 
     $scope.shows = $rootScope.Showcalendar;
 
 

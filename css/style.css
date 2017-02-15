@@ -306,8 +306,7 @@
 
 
 .watchlist{
-  border-bottom: solid 1px #2d2d2d;
-    border-right: solid 1px #2d2d2d;
+  margin-bottom: 10px;
 }
 
 .watchlist-title{
@@ -345,6 +344,9 @@ margin: 10px;
   font-weight: bold;
 }
 
+.calendar-today{
+  color: #ed1c24;
+}
 
 /* end new design*/
 
