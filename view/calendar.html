@@ -15,9 +15,8 @@
         </div>
     </div>
 
-
+    <!--
     <div ng-repeat="week in thisweek">
-
         <div ng-repeat="calendar in calendars">
             <div ng-if="getdate(calendar.first_aired)== week.getDate()">
                 <p class="calendar-date" ng-class="today.getDate()==week.getDate()?'calendar-today':''">
@@ -32,5 +31,14 @@
                 </div>
             </div>
 
+        </div>
+    </div>-->
+
+    <div ng-repeat="calendar in calendars">
+        {{calendar.show}}
+        <div ng-if="calendar.length >0">
+            <div ng-repeat="moreCal in calendar">
+                {{moreCal.show}}
+            </div>
         </div>
     </div>
