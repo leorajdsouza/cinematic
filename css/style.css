@@ -316,9 +316,13 @@
   text-transform: uppercase;
 }
 
-
+.calendar-episode{
+  color: #fff;
+  padding: 10px;
+}
 .calendar{
   color:#fff; 
+     margin: 10px;
 }
 
 .weekTitle{
@@ -334,6 +338,7 @@
 margin: 10px;
 } 
 .calendar-date{
+  /*#0B0C10  black*/
   background: #2a2a2a;
     padding: 10px;
     color: #fff;
@@ -347,6 +352,7 @@ margin: 10px;
 .calendar-today{
   color: #ed1c24;
 }
+ 
 
 /* end new design*/
 

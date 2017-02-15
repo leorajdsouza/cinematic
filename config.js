@@ -3,6 +3,8 @@ var appConfig = {
     endPoint: "https://api-fetch.website/tv/"
 };
 
+var isOffline = true;
+
 //future alernative config url , if downtime 
 // ----------TV API's----------
 // https://popcorntimece.ch/api/v2
