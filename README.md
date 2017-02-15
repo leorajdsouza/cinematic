@@ -1,14 +1,20 @@
 # Cinematic App
-A simplified torrent search app to browse and download tv shows. Allows you to download eztv uploaded torrents. App also fetches your favorite shows from trakt.tv, so that you can keep track and ease your download.
-<br>
-Week calendar displays show in current week. watchlist displays list you follow. 
+A simplified torrent search app to browse and download tv shows. Allows you to download eztv uploaded torrents .
 
- 
+#Search
+  Allows you to search tv shows by keyword
 
-###Tech
-* [AngularJS] - HTML enhanced for web apps!
-* [Visual Studio Code] - awesome web-based text editor 
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps 
+#Lists
+  Lists out all tv shows
+
+#Show details 
+Fetches all data along with torrent magnet link
+
+#Technologies 
+  Angular.js,
+  html 5,
+  Bootstrap
+
 
 #Road Map
 --------

@@ -1,25 +1,36 @@
-<div class="container calendar">
-    <div class="row">
-        <div class="container-fluid">
-            <div class="row">
-                <!--<div ng-repeat="week in weeks">-->
-                <!--<div class="weekTitle"> {{week}} </div>-->
-                <!--<div ng-repeat="show in shows">
+<div class="container-fluid">
+    <div class="row calendar">
+        <div class="col-md-2">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-8">
+            <!--<div ng-repeat="week in weeks">-->
+            <!--<div class="weekTitle"> {{week}} </div>-->
+            <!--<div ng-repeat="show in shows">
                     {{ show.show.title }} - {{ show.first_aired | date:"dd" }} {{thisweek[$index].getDate()}}                    
                 </div>-->
-                <div ng-repeat="week in thisweek">
-                    <!--<p> {{weeks[$index]}}</p>-->
-                    <div ng-repeat="calendar in calendars"> 
-                        <div ng-if="getdate(calendar.first_aired)== week.getDate()"> 
-                            <p class="calendar-date" ng-class="today.getDate()==week.getDate()?'calendar-today':''">  <span class="calendar-day">{{week | date:"d" }}</span> {{week | date:"EEEE" }}</p>
-                            <span> <img  ng-src="http://thetvdb.com/banners/_cache/posters/{{calendar.show.ids.tvdb}}-1.jpg" height="300" width="200px "></span>
-                            <!--<a href="#shows/{{calendar.show.ids.imdb}}"> {{calendar.show.title}} ({{calendar.show.year}}) </a>-->
-                            <br> {{calendar.episode.season}}X{{calendar.episode.number}} {{calendar.episode.title}} <br> <br>
-                        </div>
 
-                    </div>
-                </div>
-            </div>
+            <!--<calendar calendar-mode="mode" event-source="eventSource">-->
+        </div>
+        <div class="col-md-2">
         </div>
     </div>
-</div>
+
+
+    <div ng-repeat="week in thisweek">
+
+        <div ng-repeat="calendar in calendars">
+            <div ng-if="getdate(calendar.first_aired)== week.getDate()">
+                <p class="calendar-date" ng-class="today.getDate()==week.getDate()?'calendar-today':''">
+                    <span class="calendar-day">{{week | date:"d" }}</span> {{week | date:"EEEE" }}
+                </p>
+                <span>
+                            <img  ng-src="http://thetvdb.com/banners/_cache/posters/{{calendar.show.ids.tvdb}}-1.jpg" height="300" width="200px ">
+                         </span>
+                <br>
+                <div>
+                    <span class="calendar-episode"> {{calendar.episode.season}}X{{calendar.episode.number}} {{calendar.episode.title}} </span>                    <br> <br>
+                </div>
+            </div>
+
+        </div>
+    </div>

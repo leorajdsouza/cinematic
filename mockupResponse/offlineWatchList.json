@@ -1,0 +1,172 @@
+[
+  {
+    "rank": 1,
+    "listed_at": "2017-02-12T12:49:41.000Z",
+    "type": "show",
+    "show": {
+      "title": "The Big Bang Theory",
+      "year": 2007,
+      "ids": {
+        "trakt": 1409,
+        "slug": "the-big-bang-theory",
+        "tvdb": 80379,
+        "imdb": "tt0898266",
+        "tmdb": 1418,
+        "tvrage": 8511
+      }
+    }
+  },
+  {
+    "rank": 2,
+    "listed_at": "2017-02-12T14:02:18.000Z",
+    "type": "show",
+    "show": {
+      "title": "Arrow",
+      "year": 2012,
+      "ids": {
+        "trakt": 1403,
+        "slug": "arrow",
+        "tvdb": 257655,
+        "imdb": "tt2193021",
+        "tmdb": 1412,
+        "tvrage": 30715
+      }
+    }
+  },
+  {
+    "rank": 3,
+    "listed_at": "2017-02-12T14:02:35.000Z",
+    "type": "show",
+    "show": {
+      "title": "Marvel's Agents of S.H.I.E.L.D.",
+      "year": 2013,
+      "ids": {
+        "trakt": 1394,
+        "slug": "marvel-s-agents-of-s-h-i-e-l-d",
+        "tvdb": 263365,
+        "imdb": "tt2364582",
+        "tmdb": 1403,
+        "tvrage": 32656
+      }
+    }
+  },
+  {
+    "rank": 4,
+    "listed_at": "2017-02-12T14:02:37.000Z",
+    "type": "show",
+    "show": {
+      "title": "The Walking Dead",
+      "year": 2010,
+      "ids": {
+        "trakt": 1393,
+        "slug": "the-walking-dead",
+        "tvdb": 153021,
+        "imdb": "tt1520211",
+        "tmdb": 1402,
+        "tvrage": 25056
+      }
+    }
+  },
+  {
+    "rank": 5,
+    "listed_at": "2017-02-12T14:02:42.000Z",
+    "type": "show",
+    "show": {
+      "title": "The Flash",
+      "year": 2014,
+      "ids": {
+        "trakt": 60300,
+        "slug": "the-flash-2014",
+        "tvdb": 279121,
+        "imdb": "tt3107288",
+        "tmdb": 60735,
+        "tvrage": 36939
+      }
+    }
+  },
+  {
+    "rank": 6,
+    "listed_at": "2017-02-12T14:02:50.000Z",
+    "type": "show",
+    "show": {
+      "title": "Game of Thrones",
+      "year": 2011,
+      "ids": {
+        "trakt": 1390,
+        "slug": "game-of-thrones",
+        "tvdb": 121361,
+        "imdb": "tt0944947",
+        "tmdb": 1399,
+        "tvrage": 24493
+      }
+    }
+  },
+  {
+    "rank": 7,
+    "listed_at": "2017-02-12T14:02:50.000Z",
+    "type": "show",
+    "show": {
+      "title": "Supernatural",
+      "year": 2005,
+      "ids": {
+        "trakt": 1611,
+        "slug": "supernatural",
+        "tvdb": 78901,
+        "imdb": "tt0460681",
+        "tmdb": 1622,
+        "tvrage": 5410
+      }
+    }
+  },
+  {
+    "rank": 8,
+    "listed_at": "2017-02-12T14:02:58.000Z",
+    "type": "show",
+    "show": {
+      "title": "Sherlock",
+      "year": 2010,
+      "ids": {
+        "trakt": 19792,
+        "slug": "sherlock",
+        "tvdb": 176941,
+        "imdb": "tt1475582",
+        "tmdb": 19885,
+        "tvrage": 23433
+      }
+    }
+  },
+  {
+    "rank": 9,
+    "listed_at": "2017-02-13T10:24:46.000Z",
+    "type": "show",
+    "show": {
+      "title": "Modern Family",
+      "year": 2009,
+      "ids": {
+        "trakt": 1412,
+        "slug": "modern-family",
+        "tvdb": 95011,
+        "imdb": "tt1442437",
+        "tmdb": 1421,
+        "tvrage": 22622
+      }
+    }
+  },
+  {
+    "rank": 10,
+    "listed_at": "2017-02-14T04:38:23.000Z",
+    "type": "show",
+    "show": {
+      "title": "Lucifer",
+      "year": 2016,
+      "ids": {
+        "trakt": 98990,
+        "slug": "lucifer",
+        "tvdb": 295685,
+        "imdb": "tt4052886",
+        "tmdb": 63174,
+        "tvrage": 45076
+      }
+    }
+  }
+]
