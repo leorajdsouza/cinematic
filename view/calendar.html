@@ -35,10 +35,22 @@
     </div>-->
 
     <div ng-repeat="calendar in calendars">
-        {{calendar.show}}
-        <div ng-if="calendar.length >0">
+        {{calendar.first_aired | date:"d" }}
+        <p class="calendar-date" ng-if="!calendar.length>0">
+            <span class="calendar-day">{{calendar.first_aired | date:"d" }}</span> {{calendar.first_aired | date:"EEEE" }}
+        </p>
+        <!--<p class="calendar-date" ng-if="calendar.length>0">
+            <span class="calendar-day">{{calendar[0].first_aired | date:"d" }}</span> {{calendar[0].first_aired | date:"EEEE"
+            }}
+        </p>-->
+        <!--<div ng-if="!calendar.length>0">
+            {{calendar.episode.title}}
+        </div>-->
+
+        <!--<div ng-if="calendar.length>0">
             <div ng-repeat="moreCal in calendar">
                 {{moreCal.show}}
             </div>
-        </div>
+        </div>-->
+
     </div>
