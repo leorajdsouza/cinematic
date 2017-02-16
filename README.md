@@ -2,7 +2,7 @@
 A simplified torrent search app to browse and download tv shows. Allows you to download eztv uploaded torrents .
  
 #Road Map
---------
+
 --Wave 1<br>
 - Follow shows <br>
 - Shows calendar <br>
