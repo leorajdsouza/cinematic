@@ -3,6 +3,7 @@ A simplified torrent search app to browse and download tv shows. Allows you to d
  
 ![Watch List](https://github.com/leorajdsouza/cinematic/blob/master/watchlist.png)
 ![Watch List](https://github.com/leorajdsouza/cinematic/blob/master/showlist.png)
+![Watch List](https://github.com/leorajdsouza/cinematic/blob/master/details.png)
 ![Watch List](https://github.com/leorajdsouza/cinematic/blob/master/calendar.png)
 
 
