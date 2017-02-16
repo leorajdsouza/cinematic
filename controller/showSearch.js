@@ -23,10 +23,10 @@ app.controller('headerCtrl', function ($scope, showListService, $rootScope, $loc
 
     $scope.istraktId = false;
     if (localStore.get("traktId") != null) {
-        $scope.istraktId = false;
+        $scope.istraktId = true;
         $scope.user = localStore.get("traktId");
     } else {
-        $scope.istraktId = true;
+        $scope.istraktId = false;
     }
 
     $scope.logout = function () {

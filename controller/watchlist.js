@@ -16,6 +16,7 @@ app.controller('watchlistCtrl', function ($scope, $rootScope, showListService, T
         $rootScope.isLoading = false;
     } else {
         $rootScope.isLoading = true;
+         $scope.istraktId = false;
         showListService.getWatchList(showCallback);
     }
 

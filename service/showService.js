@@ -1,4 +1,3 @@
-
 /*
     Service to load shows list
 */
@@ -13,8 +12,7 @@ app.service('showListService', function ($http, TraktTVv2, localStore) {
         });
     }
     this.getShow = function (callback, show_id) {
-        $http.get(appConfig.endPoint + 'show/' + show_id + "?" + Math.random(1, 1000)
-        ).then(function (response) {
+        $http.get(appConfig.endPoint + 'show/' + show_id + "?" + Math.random(1, 1000)).then(function (response) {
             callback(response.data);
         });
     }
@@ -40,7 +38,10 @@ app.service('showListService', function ($http, TraktTVv2, localStore) {
         });
 
     }
-    this.getCalendar = function (data, callback) {
-        TraktTVv2.getShowCalendar(data, callback);
+    this.getCalendar = function (callback) {
+        this.getWatchList(function (data) {
+            TraktTVv2.getShowCalendar(data, callback);
+        });
+
     }
 });

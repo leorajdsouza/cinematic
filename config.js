@@ -1,6 +1,6 @@
 
 // For test only - To get mockup respnose
-var isOffline = true;
+var isOffline = false;
 
 var appConfig = {
     endPoint: "https://api-fetch.website/tv/"
@@ -9,9 +9,9 @@ var APIkey = '39229f5c0530191f27ab06c27c1718cc6a752d05a71b67db8f521cb280942839';
 var endpoint = 'https://api-v2launch.trakt.tv/';
 
 var endpoints = {
-    watchlist: "user/%s/watchlist/shows",
+    watchlist: "users/%s/watchlist/shows",
     calendar: "calendars/all/shows/%s/7?languages=en&status=returning%20series&countries=us",
-    stats: "https://api.trakt.tv/users/%s/stats"
+    stats: "users/%s/stats"
 }
 
 var offlineEndpoints = {

@@ -1,6 +1,14 @@
 # Cinematic App
 A simplified torrent search app to browse and download tv shows. Allows you to download eztv uploaded torrents .
  
+
+ to do
+ - remove service loops 
+ - manage in 1 config file
+ - manage watchlist in localhost of in rootscope* 
+ - rootscope watch list in show details 17 line
+ - broadcast username deleted after logout and redirect to index page
+
 #Road Map
 --------
 --Wave 1<br>

@@ -36,8 +36,8 @@ app.factory('TraktTVv2', ["$q", "$http",
 
             /* what user is following*/
             getUserWatchlist: function (user, WatchedCallback) {
-                //  var watchlist = "users/" + user + "/watchlist/shows";
-
+                var watchlist = "users/" + user + "/watchlist/shows";
+               
                 $http.get(getUrl("watchlist", user), {
                     headers: {
                         'trakt-api-key': APIkey,

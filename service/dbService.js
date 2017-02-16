@@ -7,10 +7,11 @@ app.factory("localStore", function () {
             console.log("stored to local storage");
         },
         get: function (key) {
-            return localStorage.getItem("key");
+          var val = localStorage.getItem(key);
+            return  val;
         },
         remove: function (key) {
-            localStorage.removeItem("key");
+            localStorage.removeItem(key);
         }
 
     }
