@@ -14,15 +14,15 @@ app.controller('watchlistCtrl', function ($scope, $rootScope, showListService, T
     if (localStore.get("traktId") == null) {
         $scope.istraktId = true;
         $rootScope.isLoading = false;
-    }
-    else {
+    } else {
         $rootScope.isLoading = true;
         showListService.getWatchList(showCallback);
     }
+
     function userfound(data) {
         console.log(data);
         if (data != 404) {
-            //localStore.set("traktId", $scope.trakid);
+            localStore.set("traktId", $scope.trakid);
             $scope.istraktId = false;
             $scope.error = "";
             $rootScope.isLoading = true;

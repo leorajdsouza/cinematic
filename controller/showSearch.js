@@ -2,7 +2,7 @@
 /*
     Show Search Api
 */
-app.controller('headerCtrl', function ($scope, showListService, $rootScope, $location) {
+app.controller('headerCtrl', function ($scope, showListService, $rootScope, $location, localStore) {
     //check if ur in search page else dont navigate
     // clear search query
     $scope.searchShow = function () {
@@ -20,5 +20,20 @@ app.controller('headerCtrl', function ($scope, showListService, $rootScope, $loc
     $scope.isActive = function (route) {
         return route === $location.path();
     }
-    //console.log($location.url());
+
+    $scope.istraktId = false;
+    if (localStore.get("traktId") != null) {
+        $scope.istraktId = false;
+        $scope.user = localStore.get("traktId");
+    } else {
+        $scope.istraktId = true;
+    }
+
+    $scope.logout = function () {
+        if (confirm("Delete Track.TV username from Cinematic ?")) {
+            $scope.user = localStore.remove("traktId");
+        }
+    }
+
+
 });

@@ -8,6 +8,10 @@ app.factory("localStore", function () {
         },
         get: function (key) {
             return localStorage.getItem("key");
+        },
+        remove: function (key) {
+            localStorage.removeItem("key");
         }
+
     }
 });

@@ -365,7 +365,10 @@ margin: 10px;
  .traktid{
    width: 200px;
  }
-
+.user{
+      margin-top: 15px;
+    color: #fff;
+}
 /* end new design*/
  
 .spinner {

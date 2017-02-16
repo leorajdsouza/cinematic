@@ -3,10 +3,7 @@
     Navigation for Shows
 */
 app.config(function ($routeProvider) {
-    $routeProvider.when("/", {
-        templateUrl: "view/showList.html",
-        controller: "listShows"
-    }).when("/shows", {
+    $routeProvider.when("/shows", {
         templateUrl: "view/showList.html",
         controller: "listShows"
     }).when("/shows/:show_id", {
@@ -21,5 +18,5 @@ app.config(function ($routeProvider) {
     }).when("/calendar", {
         templateUrl: "view/calendar.html",
         controller: "calendarCtrl"
-    });
+    }).otherwise({ redirectTo: '/shows' });
 });
