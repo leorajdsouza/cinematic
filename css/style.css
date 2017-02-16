@@ -223,6 +223,15 @@
    margin: 15px;
  }
  
+ .mrg0{
+   margin: 0px !important;
+ }
+ .marginT50{
+   margin-top: 50px;
+ }
+  .marginT20{
+   margin-top: 20px;
+ }
  .center-me {
    margin: 0 auto;
    display: block;
@@ -353,12 +362,12 @@ margin: 10px;
   color: #ed1c24;
 }
  
+ .traktid{
+   width: 200px;
+ }
 
 /* end new design*/
-
-/*img{
-border-radius: 10px;
-}*/
+ 
 .spinner {
   font-size: 50px !important;
   color: #1db954;

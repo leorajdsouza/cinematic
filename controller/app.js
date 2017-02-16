@@ -8,7 +8,7 @@ To do
 */
 
 
-var app = angular.module('cinematicApp', ['ngRoute','ui.rCalendar']);
+var app = angular.module('cinematicApp', ['ngRoute']);
 var db;
 // app.constant('DB_CONFIG', {
 //     shows: {
@@ -23,21 +23,6 @@ app.run(function (TraktTVv2, $rootScope) {
     //offline data
 
     /* Get this weeks dates*/
-    var curr = new Date;
-    var firstday = new Date(curr.setDate(curr.getDate() - curr.getDay()));
-
-    var date = new Date(firstday);
-    var day = date.getDay();
-    $rootScope.thisweek = []
-    for (var i = 0; i < 7; i++) {
-        if (i - day != 0) {
-            var days = i - day;
-            var newDate = new Date(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            $rootScope.thisweek.push(newDate);
-        } else
-            $rootScope.thisweek.push(date);
-    }
-
 
 
 

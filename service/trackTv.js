@@ -6,24 +6,9 @@
  */
 app.factory('TraktTVv2', ["$q", "$http",
     function ($q, $http, $rootScope) {
-
-        var APIkey = '39229f5c0530191f27ab06c27c1718cc6a752d05a71b67db8f521cb280942839';
-        var endpoint = 'https://api-v2launch.trakt.tv/';
-
-        var endpoints = {
-            watchlist: "user/bux420/watchlist/shows",
-            calendar: "calendars/all/shows/2017-02-12/7?languages=en&status=returning%20series&countries=us"
-        }
-
-        var offlineEndpoints = {
-            watchlist: "mockupResponse/offlineWatchList.json",
-            calendar: "mockupResponse/offlineCalendar.json"
-        }
-
-
-        var getUrl = function (type) {
+        var getUrl = function (type, param) {
             if (!isOffline) {
-                var out = endpoint + endpoints[type];
+                var out = endpoint + endpoints[type].replace('%s', encodeURIComponent(param));
                 return out;
             } else {
                 var out = offlineEndpoints[type];
@@ -33,10 +18,27 @@ app.factory('TraktTVv2', ["$q", "$http",
 
         var service = {
             /* what user is following*/
+            isValidUser: function (user, callback) {
+                $http.get(getUrl("stats", user), {
+                    headers: {
+                        'trakt-api-key': APIkey,
+                        'trakt-api-version': 2,
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                }).then(function (result) {
+                    callback(result.status);
+                }, function (err) {
+                    callback(err.status);
+                });
+            },
+
+
+            /* what user is following*/
             getUserWatchlist: function (user, WatchedCallback) {
                 //  var watchlist = "users/" + user + "/watchlist/shows";
 
-                $http.get(getUrl("watchlist"), {
+                $http.get(getUrl("watchlist", user), {
                     headers: {
                         'trakt-api-key': APIkey,
                         'trakt-api-version': 2,
@@ -50,14 +52,11 @@ app.factory('TraktTVv2', ["$q", "$http",
                 });
             },
 
-            //https://api.trakt.tv/calendars/all/shows/2017-02-12/7?languages=en&status=returning%20series&countries=us
             getShowCalendar: function (userShows, callback) {
-
-                // //get sunday date and send
-                //     var calendar = "calendars/all/shows/2017-02-12/7?languages=en&status=returning%20series&countries=us";
-                //var date = 2017-02-01;
-                //  var duration = 7;
-                $http.get(getUrl("calendar"), {
+                var curr = new Date;
+                var firstday = new Date(curr.setDate(curr.getDate() - curr.getDay()));
+                var date = "2017-02-01";
+                $http.get(getUrl("calendar", firstday), {
                     headers: {
                         'trakt-api-key': APIkey,
                         'trakt-api-version': 2,
@@ -82,8 +81,6 @@ app.factory('TraktTVv2', ["$q", "$http",
                 }, function (err) {
                     //WatchedCallback(err);
                 });
-
-
             }
 
         };

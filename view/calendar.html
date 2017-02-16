@@ -1,21 +1,60 @@
-<div class="container-fluid">
+<div class="container">
+    <div class="row">
+        <div class="container-fluid">
+            <div class="row show-details">
+                <div ng-show="istraktId" class="col-xs-12 col-sm-12 col-md-12 show-title text-center">
+                    <p class="marginT20"> You need "Trakt TV" user ID in order CINEMATIC to keep track of your shows. Vist "www.trakt.tv"</p>
+                    <form class="form-group marginT20" name="trakFrm" ng-submit="saveTrakId()" novalidate>
+                        <p class="following">{{error}}</p>
+                        <div class="form-group">
+                            <input type="text" required minlength="3" ng-model="trakid" name="trakid" class="form-control traktid center-me" placeholder="Trakt username">
+                        </div>
+                        <button type="submit" class="btn btn-default btn-green mrg0">SAVE</button>
+                    </form>
+                </div>
+                <div ng-if="!istraktId" class="col-xs-12 col-sm-6 col-md-4 show-title" ng-repeat="calendar in calendars">
+                    <!--<div class="clearfix visible-xs"></di   v>-->
+                    <a href="#shows/{{calendar.show.ids.imdb}}">
+                        <div ng-class="{'show-display-box':$even,'show-display-box-1':$odd}">
+                            <span> <img ng-src="http://thetvdb.com/banners/_cache/posters/{{calendar.show.ids.tvdb}}-1.jpg" height="150 " width="100px "></span>
+                            <span class="show-box-title">
+                                <p class="show-name padB15">{{calendar.show.title}}</p> 
+                                 <p class="show-box-title-clr"><span class="show-box-title-subclr"> {{calendar.episode.title}} {{calendar.episode.season}}X{{calendar.episode.number}}</span></p>
+                            <p class="show-box-title-clr">First episode year: <span class="show-box-title-subclr"> {{calendar.show.year}} </span></p>
+                            <p class="show-box-title-clr">Air date: <span class="show-box-title-subclr" ng-class="today.getDate()==getdate(calendar.first_aired)?'calendar-today':''">  {{ calendar.first_aired | date:"dd MMMM yyyy" }} </span></p>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--   <div ng-repeat="myShows in shows ">
+        <img ng-src="{{myShows.images.poster}} " height="100 " width="75px ">
+        <a href="#shows/{{myShows._id}} "> {{myShows.title}} : {{myShows.year}} </a>
+    </div>-->
+
+<!--<div class="container-fluid">
     <div class="row calendar">
         <div class="col-md-2">
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-8">
-            <!--<div ng-repeat="week in weeks">-->
-            <!--<div class="weekTitle"> {{week}} </div>-->
-            <!--<div ng-repeat="show in shows">
+        <div class="col-xs-12 col-sm-12 col-md-8">-->
+<!--<div ng-repeat="week in weeks">-->
+<!--<div class="weekTitle"> {{week}} </div>-->
+<!--<div ng-repeat="show in shows">
                     {{ show.show.title }} - {{ show.first_aired | date:"dd" }} {{thisweek[$index].getDate()}}                    
                 </div>-->
 
-            <!--<calendar calendar-mode="mode" event-source="eventSource">-->
-        </div>
+<!--<calendar calendar-mode="mode" event-source="eventSource">-->
+<!--</div>
         <div class="col-md-2">
         </div>
-    </div>
+    </div>-->
 
-    <!--
+<!--
     <div ng-repeat="week in thisweek">
         <div ng-repeat="calendar in calendars">
             <div ng-if="getdate(calendar.first_aired)== week.getDate()">
@@ -34,23 +73,23 @@
         </div>
     </div>-->
 
-    <div ng-repeat="calendar in calendars">
-        {{calendar.first_aired | date:"d" }}
-        <p class="calendar-date" ng-if="!calendar.length>0">
-            <span class="calendar-day">{{calendar.first_aired | date:"d" }}</span> {{calendar.first_aired | date:"EEEE" }}
-        </p>
-        <!--<p class="calendar-date" ng-if="calendar.length>0">
+<!--<div ng-repeat="calendar in calendars">
+    {{!calendar.length>0}}
+    <p class="calendar-date" ng-if="!calendar.length>0">
+        <span class="calendar-day">{{calendar.first_aired | date:"d" }}</span> {{calendar.first_aired | date:"EEEE" }}
+    </p>-->
+<!--<p class="calendar-date" ng-if="calendar.length>0">
             <span class="calendar-day">{{calendar[0].first_aired | date:"d" }}</span> {{calendar[0].first_aired | date:"EEEE"
             }}
         </p>-->
-        <!--<div ng-if="!calendar.length>0">
+<!--<div ng-if="!calendar.length>0">
             {{calendar.episode.title}}
         </div>-->
 
-        <!--<div ng-if="calendar.length>0">
+<!--<div ng-if="calendar.length>0">
             <div ng-repeat="moreCal in calendar">
                 {{moreCal.show}}
             </div>
         </div>-->
 
-    </div>
+<!--</div>-->

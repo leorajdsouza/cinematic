@@ -4,6 +4,6 @@ app.directive('header', function () {
         restrict: 'E',
         replace: true,
         templateUrl: "view/header.html",
-        controller: 'showSearchCtrl'
+        controller: 'headerCtrl'
     }
 });
