@@ -45,6 +45,7 @@ app.controller('calendarCtrl', function ($scope, $rootScope, TraktTVv2, showList
             TraktTVv2.isValidUser($scope.trakid, userfound);
         } else {
             $scope.error = "Invalid username";
+            $rootScope.isLoading = false;
         }
     }
 

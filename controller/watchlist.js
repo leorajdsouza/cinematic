@@ -33,6 +33,7 @@ app.controller('watchlistCtrl', function ($scope, $rootScope, showListService, T
             $scope.$emit('loggedIn', { "logged": true });
         } else {
             $scope.error = "Invalid username";
+            $rootScope.isLoading = false;
         }
     }
 
