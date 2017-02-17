@@ -17,12 +17,12 @@ A simplified torrent search app to browse and download tv shows. Allows you to d
 #Road Map
 --------
 --Wave 1<br>
-- Shows calendar <br>  -Done
-- Intergration with trakt.tv Api <br>  -Done
+- Shows calendar -Done<br>  
+- Intergration with trakt.tv Api  -Done<br> 
 - New episode notifications <br> 
 - Offline db<br>
 - Intergrate require js <br>
-- Project structure and architechture<br>  -Done
+- Project structure and architechture -Done<br>  
 - Test case- unit testing<br>
 - Docs and help section<br>
 <br>
