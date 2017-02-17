@@ -8,12 +8,15 @@ A simplified torrent search app to browse and download tv shows. Allows you to d
 
 
 
- to do
+ To fix
+ ------
  - remove service loops 
  - manage in 1 config file
  - manage watchlist in localhost of in rootscope* 
  - rootscope watch list in show details 17 line
  - broadcast username deleted after logout and redirect to index page
+ - loading for trakt username and search page
+ - UTC time cinvertion for calendar
 
 
 
