@@ -34,11 +34,15 @@ app.controller('headerCtrl', function ($scope, showListService, $rootScope, $loc
     }
 
     $scope.logout = function () {
-        if (confirm("Delete Track.TV ID from Cinematic ?")) {
+        var optn = confirm("Delete Track.TV ID from Cinematic ?") 
+        if (optn) {
             $scope.user = localStore.remove("traktId");
+            $scope.istraktId = false;
+            $scope.$broadcast('loggedOut', { "out": true });
         }
-        $scope.istraktId = false;
-        $scope.$broadcast('loggedOut', { "out": true });
+
+
+
     }
     $scope.$on('loggedIn', function (event, args) {
         checkForUser();
