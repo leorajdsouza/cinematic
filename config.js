@@ -1,6 +1,6 @@
 
 // For test only - To get mockup respnose
-var isOffline = true;
+var isOffline = false;
 
 var appConfig = {
     endPoint: "https://api-fetch.website/tv/"
