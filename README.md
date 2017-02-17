@@ -2,13 +2,13 @@
 A simplified torrent search app to browse and download tv shows. Allows you to download eztv uploaded torrents. Also keeps track of your shows using trakt.TV to ease your pain.
 <br>
 #Watchlist
-![watch List](https://github.com/leorajdsouza/cinematic/blob/master/watchlist.png)
+![watch List](https://github.com/leorajdsouza/cinematic/blob/master/screenshot/watchlist.png)
 #Show List
-![Show list](https://github.com/leorajdsouza/cinematic/blob/master/showlist.png)
+![Show list](https://github.com/leorajdsouza/cinematic/blob/master/screenshot/showlist.png)
 #Details page
-![details](https://github.com/leorajdsouza/cinematic/blob/master/details.png)
+![details](https://github.com/leorajdsouza/cinematic/blob/master/screenshot/details.png)
 #Show Calendar
-![calendar](https://github.com/leorajdsouza/cinematic/blob/master/calendar.png)
+![calendar](https://github.com/leorajdsouza/cinematic/blob/master/screenshot/calendar.png)
 
 <br>
 
