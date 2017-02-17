@@ -1,12 +1,12 @@
 # Cinematic App
-A simplified torrent search app to browse and download tv shows. Allows you to download eztv uploaded torrents .
- 
+A simplified torrent search app to browse and download tv shows. Allows you to download eztv uploaded torrents. Also keeps track of your shows using trakt.TV to ease your pain.
+<br>
 ![watch List](https://github.com/leorajdsouza/cinematic/blob/master/watchlist.png)
 ![Show list](https://github.com/leorajdsouza/cinematic/blob/master/showlist.png)
 ![details](https://github.com/leorajdsouza/cinematic/blob/master/details.png)
 ![calendar](https://github.com/leorajdsouza/cinematic/blob/master/calendar.png)
 
-
+<br>
 
  To fix
  ------
