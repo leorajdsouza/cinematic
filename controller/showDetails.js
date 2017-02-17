@@ -10,29 +10,6 @@ app.controller('showsDetailsCtrl', function ($scope, showListService, $routePara
         $scope.episodes = $scope.showDataMore.episodes;
         $scope.seasonDups();
         $rootScope.isLoading = false;
-        // $scope.followShows = [];
-
-        $scope.isFollow = false; 
-  
-        for (var i = 0; i < $rootScope.watchlist.length; i++) { 
-            if (!$scope.isFollow) { 
-                if ($rootScope.watchlist[i].tvdb == $scope.showDataMore.tvdb_id) { 
-                    $scope.isFollow = true;
-                    break
-                }
-            }
-        } 
-
-        //for db row to ng repeat
-        // for (var i = 0; i < $rootScope.followData.length; i++) {
-        //     console.log($rootScope.followData.item(i));
-        //     $scope.followShows.push($rootScope.followData.item(i));
-        //     // if (!$scope.isFollow) {
-        //     //     if ($rootScope.followData.item(i).tvdb_id == $scope.showDataMore.tvdb_id) {
-        //     //         $scope.isFollow = true;
-        //     //     }
-        //     // }
-        // }
     }
 
     /*Remove duplicate season values*/
@@ -48,7 +25,6 @@ app.controller('showsDetailsCtrl', function ($scope, showListService, $routePara
         $scope.selectedSeason = $scope.seasonCount[0].toString();
     }
 
-
     function compareNumbers(a, b) {
         return a - b;
     }
@@ -61,15 +37,6 @@ app.controller('showsDetailsCtrl', function ($scope, showListService, $routePara
     $scope.openTorrent = function (magnet) {
         window.location.replace(magnet);
         /* send toast notification to user saying torrent has been added. e.g mac */
-        // code goes here 
+        // code goes here , future implimentation
     }
-    // $scope.follow = function (id, tvdb_id, follow) {
-    //     $scope.isFollow = !follow;
-    //     var data = {
-    //         id: id,
-    //         tvdb_id: tvdb_id,
-    //         following: !follow
-    //     } 
-    // }
-
 });

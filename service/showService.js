@@ -2,6 +2,7 @@
     Service to load shows list
 */
 app.service('showListService', function ($http, TraktTVv2, localStore) {
+
     this.getShows = function (callback, page_no) {
         $http.get(appConfig.endPoint + "shows/" + page_no).then(function (response) {
             //  console.log(response);

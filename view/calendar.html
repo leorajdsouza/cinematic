@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row show-details">
                 <div ng-show="istraktId" class="col-xs-12 col-sm-12 col-md-12 show-title text-center">
-                    <p class="marginT20"> CINEMATIC needs your "Trakt TV" user ID in order to keep track of your shows.  Vist "www.trakt.tv"</p>
+                    <p class="marginT20"> CINEMATIC needs your "Trakt TV" user ID in order to keep track of your shows. Vist "www.trakt.tv"</p>
                     <form class="form-group marginT20" name="trakFrm" ng-submit="saveTrakId()" novalidate>
                         <p class="following">{{error}}</p>
                         <div class="form-group">
@@ -18,15 +18,15 @@
                         <div ng-class="{'show-display-box':$even,'show-display-box-1':$odd}">
                             <span> <img ng-src="http://thetvdb.com/banners/_cache/posters/{{calendar.show.ids.tvdb}}-1.jpg" height="150 " width="100px "></span>
                             <span class="show-box-title">
-                                <p class="show-name ">{{calendar.episode.title}} <span class="show-box-title-subclr" >{{calendar.episode.season}}X{{calendar.episode.number}} </span></p> 
-                                 
+                                <p class="show-name ">{{calendar.episode.title}} <span class="show-box-title-subclr" >{{calendar.episode.season}}X{{calendar.episode.number}} </span></p>
+
                             <p class="show-box-title-clr">First episode year: <span class="show-box-title-subclr"> {{calendar.show.year}} </span></p>
-                            <p class="show-box-title-clr">Air date: <span class="show-box-title-subclr" >  {{ calendar.first_aired | date:"dd MMMM yyyy" }} </span></p>
-                              <p class="show-box-title-clr">
-                                   <span class="show-box-title-subclr show-name" ng-class="today.getDate()==getdate(calendar.first_aired)?'calendar-today':''"> 
+                            <p class="show-box-title-clr">Air date: <span class="show-box-title-subclr">  {{ calendar.first_aired | date:"dd MMMM yyyy": '-0530' }} </span></p>
+                            <p class="show-box-title-clr">
+                                <span class="show-box-title-subclr show-name" ng-class="today.getDate()==getdate(calendar.first_aired)?'calendar-today':''"> 
                                         {{ calendar.first_aired | date:"EEEE" }}
                                    </span>
-                                </p>
+                            </p>
                             </span>
                         </div>
                     </a>

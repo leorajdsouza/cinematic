@@ -1,10 +1,11 @@
 
 // For test only - To get mockup respnose
-var isOffline = false;
+var isOffline = true;
 
 var appConfig = {
     endPoint: "https://api-fetch.website/tv/"
 };
+
 var APIkey = '39229f5c0530191f27ab06c27c1718cc6a752d05a71b67db8f521cb280942839';
 var endpoint = 'https://api-v2launch.trakt.tv/';
 

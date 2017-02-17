@@ -37,7 +37,7 @@ app.factory('TraktTVv2', ["$q", "$http",
             /* what user is following*/
             getUserWatchlist: function (user, WatchedCallback) {
                 var watchlist = "users/" + user + "/watchlist/shows";
-               
+
                 $http.get(getUrl("watchlist", user), {
                     headers: {
                         'trakt-api-key': APIkey,
@@ -55,7 +55,6 @@ app.factory('TraktTVv2', ["$q", "$http",
             getShowCalendar: function (userShows, callback) {
                 var curr = new Date;
                 var firstday = new Date(curr.setDate(curr.getDate() - curr.getDay()));
-                var date = "2017-02-01";
                 $http.get(getUrl("calendar", firstday), {
                     headers: {
                         'trakt-api-key': APIkey,
@@ -72,6 +71,9 @@ app.factory('TraktTVv2', ["$q", "$http",
                     calendarData = [];
                     for (var i = 0; i < result.data.length; i++) {
                         if (imdbId.indexOf(result.data[i].show.ids.imdb) != -1) {
+                            var offset = new Date(result.data[i].first_aired);
+                            offset.setDate(offset.getDate() - 1);
+                            result.data[i].first_aired = offset;
                             calendarData.push(result.data[i]);
 
                         }

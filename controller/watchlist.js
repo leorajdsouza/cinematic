@@ -11,27 +11,36 @@ app.controller('watchlistCtrl', function ($scope, $rootScope, showListService, T
 
 
     //console.log(localStore.get("traktId"));
-    if (localStore.get("traktId") == null) {
-        $scope.istraktId = true;
-        $rootScope.isLoading = false;
-    } else {
-        $rootScope.isLoading = true;
-         $scope.istraktId = false;
-        showListService.getWatchList(showCallback);
+    $scope.isUser = function () {
+        if (localStore.get("traktId") == null) {
+            $scope.istraktId = true;
+            $rootScope.isLoading = false;
+        } else {
+            $rootScope.isLoading = true;
+            $scope.istraktId = false;
+            showListService.getWatchList(showCallback);
+        }
     }
+    $scope.isUser();
 
     function userfound(data) {
-        console.log(data);
         if (data != 404) {
             localStore.set("traktId", $scope.trakid);
             $scope.istraktId = false;
             $scope.error = "";
             $rootScope.isLoading = true;
             showListService.getWatchList(showCallback);
+            $scope.$emit('loggedIn', { "logged": true });
         } else {
             $scope.error = "Invalid username";
         }
     }
+
+    $scope.$on('loggedOut', function (event, args) {
+        if (args.out) {
+            $scope.isUser();
+        }
+    });
 
     $scope.saveTrakId = function () {
         if ($scope.trakFrm.trakid.$valid) {
