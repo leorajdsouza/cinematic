@@ -28,7 +28,7 @@ app.controller('watchlistCtrl', function ($scope, $rootScope, showListService, T
             localStore.set("traktId", $scope.trakid);
             $scope.istraktId = false;
             $scope.error = "";
-            $rootScope.isLoading = true;
+            $rootScope.isLoading = false;
             showListService.getWatchList(showCallback);
             $scope.$emit('loggedIn', { "logged": true });
         } else {
@@ -44,6 +44,7 @@ app.controller('watchlistCtrl', function ($scope, $rootScope, showListService, T
 
     $scope.saveTrakId = function () {
         if ($scope.trakFrm.trakid.$valid) {
+            $rootScope.isLoading = true;
             $scope.error = "";
             TraktTVv2.isValidUser($scope.trakid, userfound);
         } else {

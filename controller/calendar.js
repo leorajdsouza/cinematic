@@ -29,7 +29,7 @@ app.controller('calendarCtrl', function ($scope, $rootScope, TraktTVv2, showList
             localStore.set("traktId", $scope.trakid);
             $scope.istraktId = false;
             $scope.error = "";
-            $rootScope.isLoading = true;
+            $rootScope.isLoading = false;
             showListService.getCalendar(calendarCallback);
             $scope.$emit('loggedIn', { "logged": true });
         } else {
@@ -41,6 +41,7 @@ app.controller('calendarCtrl', function ($scope, $rootScope, TraktTVv2, showList
     $scope.saveTrakId = function () {
         if ($scope.trakFrm.trakid.$valid) {
             $scope.error = "";
+            $rootScope.isLoading = true;
             TraktTVv2.isValidUser($scope.trakid, userfound);
         } else {
             $scope.error = "Invalid username";
