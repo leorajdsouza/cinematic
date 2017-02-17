@@ -338,6 +338,9 @@
    color: #1db954;
    font-size: 20px;     
 }
+.txt-right{
+  text-align: right;
+}
 
 .bottom-margin{
   margin: 50px;
